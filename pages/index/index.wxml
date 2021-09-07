@@ -1,2 +1,18 @@
 <!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<!-- 轮播图区域 -->
+<view class="index-container">
+  <swiper class="banner" indicator-dots>
+    <swiper-item>
+      <image src="/static/images/10.jpg"></image>
+    </swiper-item>
+     <swiper-item>
+      <image src="/static/images/10.jpg"></image>
+    </swiper-item>
+     <swiper-item>
+      <image src="/static/images/10.jpg"></image>
+    </swiper-item>
+     <swiper-item>
+      <image src="/static/images/10.jpg"></image>
+    </swiper-item>
+  </swiper>
+</view>
