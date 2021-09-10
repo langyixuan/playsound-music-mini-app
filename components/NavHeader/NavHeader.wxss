@@ -1,0 +1,14 @@
+@import '/static/iconfont/iconfont.wxss';
+.nav-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40rpx 0;
+}
+
+.nav-header text, .iconfont {
+  color: #ccc;
+  font-size: 28rpx;
+  font-weight: 700;
+}

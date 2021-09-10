@@ -1,18 +1,46 @@
 <!--pages/index/index.wxml-->
-<!-- 轮播图区域 -->
 <view class="index-container">
-  <swiper class="banner" indicator-dots>
-    <swiper-item>
-      <image src="/static/images/10.jpg"></image>
-    </swiper-item>
-     <swiper-item>
-      <image src="/static/images/10.jpg"></image>
-    </swiper-item>
-     <swiper-item>
-      <image src="/static/images/10.jpg"></image>
-    </swiper-item>
-     <swiper-item>
-      <image src="/static/images/10.jpg"></image>
-    </swiper-item>
-  </swiper>
+  <!-- 新碟上架区域 -->
+  <scroll-view class="new-album" scroll-x enable-flex>
+    <view class="album-item" wx:for="{{newAlbum}}" wx:key="id">
+      <image src="{{item.blurPicUrl}}"></image>
+      <view class="desc">
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 专辑推荐区域 -->
+  <view class="re-album">
+    <NavHeader title="专辑推荐"></NavHeader>
+    <swiper circular next-margin="40rpx" class="re-album-swiper">
+      <swiper-item wx:for="{{reAlbumDetail}}" wx:key="album.albumId">
+        <view class="re-album-item">
+           <image src="http://pngimg.com/uploads/vinyl/vinyl_PNG75.png" class="record"></image>
+           <image src="{{item.album.coverUrl}}" class="cover"></image>
+           <text class="name">{{item.album.albumName}}</text>
+           <text class="artist">{{item.album.artistName}}</text>
+           <text class="desc">{{item.product.descr[0].resource}}</text>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 精选歌单区域 -->
+  <view class="re-playlist">
+    <NavHeader title="精选歌单"></NavHeader>
+    <scroll-view class="scroll-playlist" scroll-x enable-flex>
+      <view class="playlist-item" wx:for="{{rePlaylist1}}" wx:key="id">
+        <image src="{{item.coverImgUrl}}"></image>
+        <text>{{item.name}}</text>
+      </view>
+    </scroll-view>
+    <scroll-view class="scroll-playlist" scroll-x enable-flex>
+      <view class="playlist-item" wx:for="{{rePlaylist2}}" wx:key="id">
+        <image src="{{item.coverImgUrl}}"></image>
+        <text>{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+   
 </view>

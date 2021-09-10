@@ -1,5 +1,7 @@
 // 配置服务器相关信息
 export default {
-  // baseUrl（请求服务器公共Url)
-  host: 'http://localhost:3000'
+  // baseUrl（内网请求地址 )
+  host: 'http://localhost:3000',
+  // 外网请求地址
+  mobileHost: 'http://xecf8z.natappfree.cc'
 }
