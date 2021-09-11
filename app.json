@@ -10,6 +10,34 @@
     "navigationBarTitleText": "PlaySound",
     "navigationBarTextStyle": "white"
   },
+  "tabBar": {
+    "color": "#fff",
+    "selectedColor": "#0000FF",
+    "backgroundColor": "#1A1A1A",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/static/images/icons/home.png",
+        "selectedIconPath": "/static/images/icons/home-select.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "iconPath": "/static/images/icons/search.png",
+        "selectedIconPath": "/static/images/icons/search-select.png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "iconPath": "/static/images/icons/video.png",
+        "selectedIconPath": "/static/images/icons/video-select.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "iconPath": "/static/images/icons/user.png",
+        "selectedIconPath": "/static/images/icons/user-select.png"
+      }     
+    ]
+  },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
+
