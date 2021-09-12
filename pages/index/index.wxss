@@ -14,11 +14,16 @@
   object-fit: cover;
 } */
 
+/* 自定义导航栏 */
+.navbar-title {
+  color: #fff;
+}
 /* 新碟上架区域 */
 .new-album {
   height: 500rpx;
   display: flex;
   margin-bottom: 32rpx;
+  margin-top: 200rpx;
 }
 
 .new-album .album-item{

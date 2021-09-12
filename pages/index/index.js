@@ -63,7 +63,7 @@ Page({
     // setTimeout(() => {
     //   console.log(this.data.reAlbumDetail)
     // }, 600)
-    console.log(this.data.reAlbumDetail)
+    // console.log(this.data.reAlbumDetail)
   },
 
   /**

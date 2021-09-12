@@ -3,12 +3,11 @@
     "pages/index/index",
     "pages/personal/personal",
     "pages/video/video",
-    "pages/search/search"
+    "pages/search/search",
+    "components/Navigation/Navigation"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#1A1A1A",
-    "navigationBarTitleText": "PlaySound",
-    "navigationBarTextStyle": "white"
+    "navigationStyle": "custom"
   },
   "tabBar": {
     "color": "#fff",
@@ -34,10 +33,9 @@
         "pagePath": "pages/personal/personal",
         "iconPath": "/static/images/icons/user.png",
         "selectedIconPath": "/static/images/icons/user-select.png"
-      }     
+      }
     ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
-

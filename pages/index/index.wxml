@@ -1,5 +1,8 @@
 <!--pages/index/index.wxml-->
 <view class="index-container">
+  <Navigation>
+    <text class="navbar-title">Inex Page</text>
+  </Navigation>
   <!-- 新碟上架区域 -->
   <scroll-view class="new-album" scroll-x enable-flex>
     <view class="album-item" wx:for="{{newAlbum}}" wx:key="id">

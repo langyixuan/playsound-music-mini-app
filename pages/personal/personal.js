@@ -1,6 +1,5 @@
-// pages/personal/personal.js
+// 个人中心页面
 Page({
-
   /**
    * 页面的初始数据
    */
