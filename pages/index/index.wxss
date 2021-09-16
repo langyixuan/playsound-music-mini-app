@@ -99,7 +99,7 @@
   position: relative;
   width: 97%;
   height: 360rpx;
-  background-color: rgb(30, 31, 31);
+  background-color: #1E1F1F;
   border-radius: 20rpx;
   margin: 40rpx 40rpx 40rpx 0;
 }

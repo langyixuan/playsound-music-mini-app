@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  background-color: #ccc;
+  background-color: #1A1A1A;
   z-index: 100;
 }
 
@@ -17,6 +17,6 @@
   width: 100%;
   padding: 0 40rpx;
   position: absolute;
-  background-color: red;
+  /* background-color: red; */
   box-sizing: border-box;
 }
