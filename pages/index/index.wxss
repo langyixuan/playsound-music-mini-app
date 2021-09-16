@@ -13,7 +13,9 @@
   height: 100%;
   object-fit: cover;
 } */
-
+.index-container {
+  padding: 0 40rpx;
+}
 /* 自定义导航栏 */
 .navbar-title {
   color: #fff;

@@ -1,9 +1,8 @@
-/* 字体图标样式文件 */
 @font-face {
   font-family: "iconfont"; /* Project id 2523805 */
-  src: url('//at.alicdn.com/t/font_2523805_amdt5dbstrs.woff2?t=1630980736712') format('woff2'),
-       url('//at.alicdn.com/t/font_2523805_amdt5dbstrs.woff?t=1630980736712') format('woff'),
-       url('//at.alicdn.com/t/font_2523805_amdt5dbstrs.ttf?t=1630980736712') format('truetype');
+  src: url('//at.alicdn.com/t/font_2523805_48pe6znokgc.woff2?t=1631771396630') format('woff2'),
+       url('//at.alicdn.com/t/font_2523805_48pe6znokgc.woff?t=1631771396630') format('woff'),
+       url('//at.alicdn.com/t/font_2523805_48pe6znokgc.ttf?t=1631771396630') format('truetype');
 }
 
 .iconfont {
@@ -12,6 +11,30 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xiazai1:before {
+  content: "\e647";
+}
+
+.icon-lishi:before {
+  content: "\e61b";
+}
+
+.icon-user:before {
+  content: "\e686";
+}
+
+.icon-changpianCD:before {
+  content: "\e6b7";
+}
+
+.icon-video:before {
+  content: "\e6a4";
+}
+
+.icon-Home:before {
+  content: "\e626";
 }
 
 .icon-jiantoushang:before {

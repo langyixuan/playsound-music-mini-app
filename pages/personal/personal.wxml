@@ -1,2 +1,40 @@
-<!--pages/personal/personal.wxml-->
-<text>pages/personal/personal.wxml</text>
+<!-- <image src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/d868ab92574813.5ec503fd1fb69.gif"></image> -->
+<view class="personal-container">
+  <view class="header">
+    <image class="bg" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/db1f88127130717.613b66a837f02.gif"></image>
+    <view class="user-info">
+      <image class="avatar" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ab6eaf126145701.61276a82042f9.jpg"></image>
+    </view>
+  </view>
+
+  <view class="user-box">
+    <view class="music-behavior">
+      <view class="flex-left">
+        <view class="like">
+          <image src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e89c50122234059.60d6f505bfd83.jpg"></image>
+          <view class="like-text">
+            <text class="iconfont icon-xihuanlike"></text>
+            <text>喜欢</text>
+          </view>
+        </view>
+      </view>
+      <view class="flex-right">
+        <view class="history">
+          <image src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e89c50122234059.60d6f505bfd83.jpg"></image>
+          <view class="history-text">
+            <text class="iconfont icon-lishi"></text>
+            <text>历史播放</text>
+          </view>
+        </view>
+        <view class="download">
+          <image src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e89c50122234059.60d6f505bfd83.jpg"></image>
+          <view class="download-text">
+            <text class="iconfont icon-xiazai1"></text>
+            <text>下载</text>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>

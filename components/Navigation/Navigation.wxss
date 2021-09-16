@@ -4,6 +4,7 @@
   left: 0;
   width: 100vw;
   background-color: #ccc;
+  z-index: 100;
 }
 
 .nav-box {

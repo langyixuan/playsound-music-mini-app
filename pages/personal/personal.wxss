@@ -1,1 +1,112 @@
-/* pages/personal/personal.wxss */
+.header {
+  position: relative;
+}
+
+.header .bg {
+  width: 100%;
+  object-fit: cover;
+}
+
+.user-info {
+  position: absolute;
+  bottom: 100rpx;
+  left: 40rpx;
+  width: 90%;
+  height: 300rpx;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20rpx;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.user-box {
+  padding: 0 40rpx;
+  width: 100%;
+  height: 400rpx;
+  box-sizing: border-box;
+}
+
+.music-behavior {
+  width: 100%;
+  display: flex;
+}
+
+.flex-left {
+  width: 60%;
+  height: 400rpx;
+  margin-right: 20rpx;
+  border-radius: 20rpx;
+}
+
+.flex-left .like {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.flex-left .like-text {
+  position: absolute;
+  bottom: 40rpx;
+  left: 40rpx;
+  color: #fff;
+}
+
+.like-text text{
+  margin-right: 10rpx;
+}
+
+.flex-left image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20rpx;
+}
+
+.flex-right {
+  width: 40%;
+  height: 400rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flex-right .history, .download {
+  width: 100%;
+  height: 50%;
+  margin-bottom: 10rpx;
+  border-radius: 20rpx;
+  position: relative;
+}
+
+.history image, .download image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20rpx;
+}
+
+.history-text, .download-text {
+  position: absolute;
+  bottom: 20rpx;
+  left: 20rpx;
+  color: #fff;
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.history-text .iconfont, .download-text .iconfont {
+  font-weight: 500;
+}
+
+.history text, .download text {
+  margin-right: 10rpx;
+}
+
+
+
