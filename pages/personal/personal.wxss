@@ -7,29 +7,62 @@
   object-fit: cover;
 }
 
-.user-info {
+/* 用户信息展示区域 */
+.user-info-bg {
   position: absolute;
-  bottom: 100rpx;
-  left: 40rpx;
-  width: 90%;
-  height: 300rpx;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 20rpx;
-  padding: 40rpx;
-  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.avatar {
-  width: 100rpx;
-  height: 100rpx;
+.user-info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-left: 40rpx;
+}
+
+.user-info .avatar {
+  width: 120rpx;
+  height: 120rpx;
   border-radius: 50%;
 }
 
+.user-info .user-name {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #fff;
+  padding-left: 40rpx;
+}
+
+.user-info .flex-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.user-info .iconfont {
+  font-size: 36rpx;
+  color: #fff;
+  padding-right: 30rpx;
+}
+
+.user-info .iconfont text {
+  font-size: 26rpx;
+  padding-left: 10rpx;
+  font-weight: 700;
+}
+
+/* 用户使用行为区域 */
 .user-box {
   padding: 0 40rpx;
   width: 100%;
   height: 400rpx;
   box-sizing: border-box;
+  margin-top: 40rpx;
 }
 
 .music-behavior {
@@ -38,9 +71,8 @@
 }
 
 .flex-left {
-  width: 60%;
-  height: 400rpx;
-  margin-right: 20rpx;
+  width: 65%;
+  height: 450rpx;
   border-radius: 20rpx;
 }
 
@@ -69,8 +101,8 @@
 }
 
 .flex-right {
-  width: 40%;
-  height: 400rpx;
+  width: 35%;
+  height: 450rpx;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -79,9 +111,14 @@
 .flex-right .history, .download {
   width: 100%;
   height: 50%;
-  margin-bottom: 10rpx;
   border-radius: 20rpx;
   position: relative;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+
+.flex-right .history {
+  padding-bottom: 20rpx;
 }
 
 .history image, .download image {
@@ -94,10 +131,13 @@
 .history-text, .download-text {
   position: absolute;
   bottom: 20rpx;
-  left: 20rpx;
+  left: 40rpx;
   color: #fff;
   font-size: 24rpx;
-  font-weight: 700;
+}
+
+.history .history-text  {
+  bottom: 40rpx;
 }
 
 .history-text .iconfont, .download-text .iconfont {
@@ -108,5 +148,30 @@
   margin-right: 10rpx;
 }
 
+/* 用户私人歌单区域 */
+.scroll-playlist {
+  display: flex;
+  height: 520rpx;
+}
 
+.playlist-item {
+  margin-right: 20rpx;
+}
+
+.playlist-item image {
+  width: 430rpx;
+  height: 430rpx;
+  object-fit: cover;
+  border-radius: 20rpx;
+}
+
+.playlist-item text {
+  color: #fff;
+  font-size: 24rpx;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 20rpx;
+}
 

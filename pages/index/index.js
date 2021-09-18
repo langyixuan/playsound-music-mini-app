@@ -1,4 +1,3 @@
-// pages/index/index.js
 import request from '../../utils/request'
 Page({
   /**
@@ -29,7 +28,6 @@ Page({
     // 推荐专辑
     let reAlbumData = await request('/album/list', {
       limit: 5,
-      
     })
     /**
      * 获取推荐专辑详情

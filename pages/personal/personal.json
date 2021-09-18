@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "NavHeader": "/components/NavHeader/NavHeader"
+  },
   "window": {
     "navigationStyle": "custom"
   }

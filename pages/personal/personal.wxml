@@ -1,17 +1,33 @@
-<!-- <image src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/d868ab92574813.5ec503fd1fb69.gif"></image> -->
+<!-- 个人中心页面 -->
 <view class="personal-container">
+  <!-- 头部信息栏 -->
   <view class="header">
-    <image class="bg" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/db1f88127130717.613b66a837f02.gif"></image>
-    <view class="user-info">
-      <image class="avatar" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ab6eaf126145701.61276a82042f9.jpg"></image>
+    <image class="bg" src="https://cdn.dribbble.com/users/974517/screenshots/9193636/media/dcdda3828fcc6424456696c9b6e4bc30.gif"></image>
+    <view class="user-info-bg">
+      <view class="user-info">
+        <view class="flex-line">
+          <image class="avatar" src='{{userInfo ? userInfo.avatarUrl : "https://mir-s3-cdn-cf.behance.net/project_modules/disp/226d0b127428005.6141d4c3230b5.gif"}}' bindtap="toLogin"></image>
+        <text class="user-name">{{userInfo ? userInfo.nickname : "未登录~"}}</text>
+        </view>
+        <view class="flex-line">
+          <icon class="iconfont icon-guanzhu">
+            <text>{{userInfo ? userInfo.follows : 0}} 关注</text>
+          </icon>
+          <icon class="iconfont icon-fensi">
+            <text>{{userInfo ? userInfo.followeds : 0}} 被关注</text>
+          </icon>
+        </view>
+      </view>
     </view>
   </view>
 
+  <!-- 用户播放行为区域 -->
   <view class="user-box">
     <view class="music-behavior">
       <view class="flex-left">
+        <!-- 喜欢的音乐 -->
         <view class="like">
-          <image src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e89c50122234059.60d6f505bfd83.jpg"></image>
+          <image src='{{likeMusic.length ? likeMusic[0].al.picUrl : "/static/images/no-data.jpg"}}' bindTap="toLikeMusicDetail"></image>
           <view class="like-text">
             <text class="iconfont icon-xihuanlike"></text>
             <text>喜欢</text>
@@ -19,22 +35,34 @@
         </view>
       </view>
       <view class="flex-right">
+        <!-- 历史播放 -->
         <view class="history">
-          <image src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e89c50122234059.60d6f505bfd83.jpg"></image>
+          <image src='{{recentPlaylist.length ? recentPlaylist[0].song.al.picUrl : "/static/images/no-data.jpg"}}' bindtap="toHistoryDetail"></image>
           <view class="history-text">
             <text class="iconfont icon-lishi"></text>
             <text>历史播放</text>
           </view>
         </view>
+        <!-- 歌曲下载记录 -->
         <view class="download">
-          <image src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e89c50122234059.60d6f505bfd83.jpg"></image>
+          <image src="https://stereo-ssc.nascom.nasa.gov/beacon/latest_256/behind_euvi_284_latest.jpg"></image>
           <view class="download-text">
             <text class="iconfont icon-xiazai1"></text>
             <text>下载</text>
           </view>
         </view>
       </view>
+    </view>
 
+    <!-- 用户私人歌单 -->
+    <view class="user-playlist">
+      <NavHeader title="我的歌单"></NavHeader>
+      <scroll-view class="scroll-playlist" scroll-x enable-flex>
+        <view class="playlist-item" wx:for="{{userPlaylist}}" wx:key="id">
+          <image src="{{item.coverImgUrl}}" bindtap="toUserPlaylistDetail"></image>
+          <text>{{item.name}}</text>
+        </view>
+      </scroll-view>
     </view>
   </view>
 </view>

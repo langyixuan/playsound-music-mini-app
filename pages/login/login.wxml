@@ -8,13 +8,13 @@
     <text class="title">👋 欢迎回来！</text>
     <view class="input-item">
       <label for="phone">+86</label>
-      <input type="text" placeholder="请输入手机号码" id="phone" placeholder-class="place-holder"></input>
+      <input type="text" placeholder="请输入手机号码" id="phone" placeholder-class="place-holder" bindinput="handelInput"></input>
     </view>
     <view class="input-item">
-      <label for="phone">密码</label>
-      <input type="password" placeholder="请输入手机号码" id="phone" placeholder-class="place-holder"></input>
+      <label for="password">密码</label>
+      <input type="password" placeholder="请输入手机号码" id="password" placeholder-class="place-holder" bindinput="handelInput"></input>
     </view>
-    <button class="iconfont icon-youjiantou-"></button>
+    <button class="iconfont icon-youjiantou-" bindtap="login"></button>
     <!-- <text>还没有账号？ 马上注册</text> -->
   </view>
 </view>
