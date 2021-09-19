@@ -13,7 +13,7 @@ export default (url, data = {}, method = 'GET') => {
       method,
       header,
       success: (res) => {
-        console.log('请求成功', res)
+        // console.log('请求成功', res)
         resolve(res.data)
       },
       fail: (error) => {

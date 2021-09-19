@@ -1,2 +1,40 @@
-<!--pages/video/video.wxml-->
-<text>pages/video/video.wxml</text>
+<!-- 视频播放页面 -->
+<view class="video-container">
+  <!-- 自定义导航区域 -->
+  <Navigation class="navigation">
+    <text>视频</text>
+  </Navigation>
+  <!-- 头部视频导航区域 -->
+  <scroll-view scroll-x enable-flex class="nav-scroll"> 
+    <view class="nav-list">
+      <icon class="iconfont icon-search"></icon>
+      <text class="nav-item {{navId == item.id ? 'active' : ''}}" wx:for="{{videoNavList}}" wx:key="id" id="{{item.id}}" bindtap="changeNav">{{item.name}}</text>
+    </view>
+  </scroll-view>
+  <!-- 视频列表区域 -->
+  <scroll-view class="video-scroll" srcoll-y>
+    <view class="video-item" wx:for="{{currentVideoList}}" wx:key="data.vid">
+      <video src="{{item.data.urlInfo}}" poster="{{item.data.coverUrl}}"></video>
+      <text class="title">{{item.data.title}}</text>
+      <view class="footer">
+        <view class="creator">
+          <image class="avatar" src="{{item.data.creator.avatarUrl}}"></image>
+          <text class="name">{{item.data.creator.nickname}}</text>
+        </view>
+        <view class="behavior">
+          <view class="item">
+            <icon class="iconfont icon-hearts"></icon>
+            <text class="count">{{item.data.praisedCount}}</text>
+          </view>
+          <view class="item">
+            <icon class="iconfont icon-fenxiang"></icon>
+            <text class="count">{{item.data.shareCount}}</text>
+          </view>
+          <view class="item">
+            <icon class="iconfont icon-gengduo"></icon>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
