@@ -5,16 +5,37 @@
     <text>视频</text>
   </Navigation>
   <!-- 头部视频导航区域 -->
-  <scroll-view scroll-x enable-flex class="nav-scroll"> 
+  <scroll-view scroll-x enable-flex class="nav-scroll" > 
     <view class="nav-list">
       <icon class="iconfont icon-search"></icon>
       <text class="nav-item {{navId == item.id ? 'active' : ''}}" wx:for="{{videoNavList}}" wx:key="id" id="{{item.id}}" bindtap="changeNav">{{item.name}}</text>
     </view>
   </scroll-view>
   <!-- 视频列表区域 -->
-  <scroll-view class="video-scroll" srcoll-y>
+  <scroll-view class="video-scroll" 
+    scroll-y 
+    refresher-enabled bindrefresherrefresh="handleRefresher"
+    refresher-default-style="white"  
+    refresher-triggered="{{isRefresher}}"
+    bindscrolltolower="handleScrollToLower"
+  >
     <view class="video-item" wx:for="{{currentVideoList}}" wx:key="data.vid">
-      <video src="{{item.data.urlInfo}}" poster="{{item.data.coverUrl}}"></video>
+      <video 
+        src="{{item.data.urlInfo}}" 
+        poster="{{item.data.coverUrl}}" 
+        bindplay="handelVideo" 
+        id="{{item.data.vid}}" 
+        wx:if="{{currentPlayId == item.data.vid}}" 
+        object-fit="fill"
+        bindtimeupdate="handelTimeUpdate"
+        bindended="handelVideoEnd"
+      ></video>
+      <image 
+        src="{{item.data.coverUrl}}" 
+        bindtap="handelVideo" 
+        id="{{item.data.vid}}" 
+        wx:else class="cover"
+      ></image>
       <text class="title">{{item.data.title}}</text>
       <view class="footer">
         <view class="creator">
@@ -31,9 +52,11 @@
             <text class="count">{{item.data.shareCount}}</text>
           </view>
           <view class="item">
-            <icon class="iconfont icon-gengduo"></icon>
+            <icon class="iconfont icon-gengduo">
+              <button class="share-btn" open-type="share"></button>
+            </icon>
           </view>
-        </view>
+        </view> 
       </view>
     </view>
   </scroll-view>

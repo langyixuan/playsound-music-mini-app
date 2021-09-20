@@ -45,7 +45,9 @@
 /* 视频列表区域 */
 .video-scroll {
   margin-top: 40rpx;
+  height: calc(100vh - 190rpx);
 }
+
 .video-item {
   position: relative;
   width: 100%;
@@ -56,12 +58,13 @@
   color: #fff;
 
 }
-.video-item video {
+.video-item video, .cover {
   width: 100%;
   height: 380rpx;
   object-fit: cover;
   border-radius: 20rpx;
 }
+
 
 .video-item .title {
   position: absolute;
@@ -107,3 +110,16 @@
   font-size: 18rpx;
   margin-left: 10rpx;
 }
+
+.behavior .icon-gengduo {
+  position: relative;
+}
+.behavior .share-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20rpx;
+  height: 60rpx;
+  background-color: transparent;
+}
+
