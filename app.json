@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/recommendSong/recommendSong",
     "pages/video/video",
     "pages/personal/personal",
     "pages/login/login",
-    "pages/index/index",
     "pages/search/search",
     "components/Navigation/Navigation"
   ],

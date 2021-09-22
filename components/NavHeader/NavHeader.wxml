@@ -1,5 +1,5 @@
 <!-- 导航头部组件 -->
 <view class="nav-header">
   <text>{{title}}</text>
-  <text class="iconfont icon-gengduomore10"></text>
+  <text class="iconfont icon-gengduomore10" bindtap="toDetailPage"></text>
 </view>

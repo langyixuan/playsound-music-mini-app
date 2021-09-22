@@ -1,7 +1,6 @@
-<!--pages/index/index.wxml-->
 <view class="index-container">
-  <Navigation>
-    <text class="navbar-title">Inex Page</text>
+  <Navigation class="navigation">
+    <image src="/static/images/logo.png"></image>
   </Navigation>
   <!-- 新碟上架区域 -->
   <scroll-view class="new-album" scroll-x enable-flex>
@@ -13,11 +12,46 @@
     </view>
   </scroll-view>
 
+  <!-- 每日推荐区域 -->
+  <view class="daily-recommend">
+    <NavHeader title="每日推荐歌曲" router="/pages/recommendSong/recommendSong"></NavHeader>
+    <swiper circular next-margin="40rpx" class="re-daily-swiper">
+      <swiper-item wx:for="{{reDailyMusic}}" wx:key="index">
+        <view class="re-item">
+          <view class="item">
+            <image src="{{item.music[0].al.picUrl}}"></image>
+            <view class="desc">
+              <text class="name">{{item.music[0].name}}</text>
+              <text class="singer">{{item.music[0].ar[0].name}}</text>
+            </view>
+            <icon class="iconfont icon-pulse"></icon>     
+          </view>
+           <view class="item">
+            <image src="{{item.music[1].al.picUrl}}"></image>
+            <view class="desc">
+              <text class="name">{{item.music[1].name}}</text>
+              <text class="singer">{{item.music[1].ar[0].name}}</text>
+            </view> 
+            <icon class="iconfont icon-pulse"></icon>     
+          </view>
+           <view class="item">
+            <image src="{{item.music[2].al.picUrl}}"></image>
+            <view class="desc">
+              <text class="name">{{item.music[2].name}}</text>
+              <text class="singer">{{item.music[2].ar[0].name}}</text>
+            </view>  
+            <icon class="iconfont icon-pulse"></icon>     
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+
   <!-- 专辑推荐区域 -->
   <view class="re-album">
     <NavHeader title="专辑推荐"></NavHeader>
     <swiper circular next-margin="40rpx" class="re-album-swiper">
-      <swiper-item wx:for="{{reAlbumDetail}}" wx:key="album.albumId">
+      <swiper-item wx:for="{{reAlbumDetail}}" wx:key="{{album.albumId}}">
         <view class="re-album-item">
            <image src="http://pngimg.com/uploads/vinyl/vinyl_PNG75.png" class="record"></image>
            <image src="{{item.album.coverUrl}}" class="cover"></image>

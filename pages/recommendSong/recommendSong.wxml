@@ -1,0 +1,25 @@
+<!-- 每日推荐页面 -->
+<view class="daily-recommend-container">
+  <!-- 自定义导航区域 -->
+  <Navigation class="navigation">
+    <icon class="iconfont icon-zuojiantou-" bindtap="back"></icon>
+  </Navigation>
+  <image src="https://cdn.dribbble.com/users/478988/screenshots/5957389/webp.net-gifmaker.gif" class="top-bg"></image>
+   <view class="date">
+    <text class="day">{{today[0]}}</text>
+    <text class="month">/{{today[1]}}</text>
+  </view>
+  <!-- 推荐歌曲区域 -->
+  <view class="recommend-songs">
+    <scroll-view class="songs-scroll" scroll-y>
+      <view class="scroll-item" wx:for="{{todaySongs}}" wx:key="id">
+        <image class="cover" src="{{item.al.picUrl}}"></image>
+         <view class="desc">
+          <text class="name">{{item.name}}</text>
+          <text class="singer">{{item.ar[0].name}}</text>
+        </view>
+        <icon class="iconfont icon-gengduo"></icon>
+      </view>
+    </scroll-view>
+  </view>
+</view>

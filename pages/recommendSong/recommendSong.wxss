@@ -1,0 +1,106 @@
+.daily-recommend-container {
+  position: relative;
+}
+
+/* 自定义导航区域 */
+.navigation {
+  /* background-color: red; */
+}
+
+.navigation text, icon {
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.navigation .iconfont {
+  font-size: 50rpx;
+  margin-right: 40rpx;
+}
+
+.top-bg {
+  width: 100%;
+  height: 540rpx;
+  object-fit: cover;
+}
+
+.date {
+  position: absolute;
+  top: 400rpx;
+  left: 40rpx;
+  color: #fff;
+  font-weight: 700;
+}
+
+.date .day {
+  font-size: 80rpx;
+}
+
+.date .month {
+  font-size: 40rpx;
+}
+
+/* 每日推荐歌曲区域 */
+.recommend-songs {
+  position: relative;
+  top: -20rpx;
+  width: 100%;
+  border-radius: 20rpx 20rpx 0 0;
+  background-color: #1A1A1A;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.songs-scroll {
+  height: calc(100vh - 480rpx);
+}
+
+.scroll-item {
+  display: flex;
+  position: relative;
+  align-items: center;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 30rpx;
+}
+
+.scroll-item .cover {
+  width: 80rpx;
+  height: 80rpx;
+  object-fit: cover;
+  border-radius: 10rpx;
+  margin-right: 40rpx;
+}
+
+.scroll-item .desc {
+  width: 460rpx;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.scroll-item .desc .name {
+  font-size: 26rpx;
+}
+
+.scroll-item .desc .singer {
+  font-size: 22rpx;
+  color: #ccc;
+}
+
+.scroll-item .iconfont {
+  width: 50rpx;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  color: #ccc;
+}
+
+
+
+
+
+
+

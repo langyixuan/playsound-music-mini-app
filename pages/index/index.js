@@ -9,6 +9,7 @@ Page({
     rePlaylist2: [],
     reAlbum: [],
     reAlbumDetail: [],
+    reDailyMusic: []
   },
 
   /**
@@ -29,6 +30,14 @@ Page({
     let reAlbumData = await request('/album/list', {
       limit: 5,
     })
+    // 获取每日推荐歌曲
+    let reDailyMusicData = await request('/recommend/songs')
+    let reDailyMusicArr = []
+    for(let i = 0; i < 4; i++) {
+      let obj = {}
+      obj.music = reDailyMusicData.data.dailySongs.slice(3*i, (i+1) * 3)
+      reDailyMusicArr.push(obj)
+    }
     /**
      * 获取推荐专辑详情
      * 由于推荐专辑接口中的数据不详细，不能满足显示需求，所以要带着相应专辑的id去再次请求专辑详情数据
@@ -49,7 +58,8 @@ Page({
       rePlaylist1: rePlaylistData.playlists.slice(0, 5),
       rePlaylist2: rePlaylistData.playlists.slice(5, 10),
       reAlbum: reAlbumData.products,
-      reAlbumDetail: reAlbumDetailData
+      reAlbumDetail: reAlbumDetailData,
+      reDailyMusic: reDailyMusicArr
     })
 
     /**测试数据 */
@@ -62,6 +72,10 @@ Page({
     //   console.log(this.data.reAlbumDetail)
     // }, 600)
     // console.log(this.data.reAlbumDetail)
+  },
+
+  toDetail(){
+   
   },
 
   /**

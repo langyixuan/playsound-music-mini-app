@@ -1,18 +1,9 @@
-/* pages/index/index.wxss */
-/* 轮播图区域样式 */
-/* .banner {
-  width: 100%;
-  height: 300rpx;
+.navigation image{
+  width: 300rpx;
+  height: 80rpx;
+  object-fit: cover;
 }
 
-.banner image {
-  display: block;
-  margin: 0 auto;
-  border-radius: 20rpx;
-  width: 90%;
-  height: 100%;
-  object-fit: cover;
-} */
 .index-container {
   padding: 0 40rpx;
 }
@@ -156,6 +147,53 @@
   right: 40rpx;
   font-size: 24rpx;
   color: #fff;
+}
+
+/* 每日推荐区域 */
+.re-daily-swiper {
+  height: 360rpx;
+}
+
+.re-daily-swiper {
+  height: 360rpx;
+}
+
+.re-item .item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.re-item .item image {
+  width: 100rpx;
+  height: 100rpx;
+  object-fit: cover;
+  border-radius: 10rpx;
+  margin-right: 40rpx;
+}
+
+.re-item .item .desc {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+}
+
+.desc .name {
+  font-size: 26rpx;
+  color: #fff;
+}
+
+.desc .singer {
+  font-size: 22rpx;
+  color: #ccc;
+}
+
+.re-item .item .iconfont {
+  color: blue;
+  font-size: 46rpx;
+  position: absolute;
+  right: 60rpx;
 }
 
 

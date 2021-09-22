@@ -8,6 +8,11 @@ Component({
     title: {
       type: String,
       value: 'Header Text',
+    },
+    // 跳转详情页的路由
+    router: {
+      type: String,
+      value: ''
     }
   },
 
@@ -22,6 +27,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    // 跳转至相应详情页的方法
+    toDetailPage() {
+      wx.navigateTo({
+        url: this.data.router,
+      })
+    }
   }
 })

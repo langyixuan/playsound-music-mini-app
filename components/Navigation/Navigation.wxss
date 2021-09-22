@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  background-color: #1A1A1A;
+  /* background-color: #1A1A1A; */
   z-index: 100;
 }
 
