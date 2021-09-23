@@ -1,0 +1,47 @@
+<!-- 歌曲详情页面 -->
+<view class="song-detail-container">
+  <!-- 自定义导航栏 -->
+  <Navigation class="navigation">
+    <icon class="iconfont icon-zuojiantou-" bindtap="back"></icon>
+  </Navigation>
+  <!-- 图片背景 -->
+  <image class="bg" src="{{songInfo.al.picUrl}}"></image>
+  <!-- 歌曲详情区域 -->
+  <view class="song-detail">  
+    <!-- 歌曲封面 -->
+    <image src="{{songInfo.al.picUrl}}" class="cover"></image>
+    <!-- 歌曲信息 -->
+    <view class="song-name">
+      <text>{{songInfo.name}}</text>
+      <icon class="iconfont icon-xihuanlike"></icon>
+    </view>
+    <view class="singer">
+      <text>{{songInfo.ar[0].name}}</text>
+      <icon class="iconfont icon-gengduomore10"></icon>
+    </view>
+    <!-- 歌词 -->
+    <view class="lyric">
+    </view>
+    <!-- 播放进度条 -->
+    <view class="progress-bar">
+      <view class="time">
+        <text class="start">{{currentTime}}</text>
+        <text class="end">{{durationTime}}</text>
+      </view>
+      <view class="main-progress">
+        <view class="current-progress" style="width: {{currentWidth + '%'}}">
+          <!-- <view class="glow"></view> -->
+          <view class="audio-cricle"></view>
+        </view>  
+      </view>
+    </view>
+    <!-- 音乐控制栏 -->
+    <view class="control">
+      <icon class="iconfont icon-suijibofang"></icon>
+      <icon class="iconfont icon-shangyishou" bindtap="handleSwitch" id="prev"></icon>
+      <icon class="iconfont {{isPlay ? 'icon-zanting' : 'icon-icon_play'}}" bindtap="handleMusicPlay"></icon>
+      <icon class="iconfont icon-xiayishou" bindtap="handleSwitch" id="next"></icon>
+      <icon class="iconfont icon-xiazai1"></icon>
+    </view>
+  </view>
+</view>

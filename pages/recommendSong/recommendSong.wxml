@@ -13,7 +13,7 @@
   <view class="recommend-songs">
     <scroll-view class="songs-scroll" scroll-y>
       <view class="scroll-item" wx:for="{{todaySongs}}" wx:key="id">
-        <image class="cover" src="{{item.al.picUrl}}"></image>
+        <image class="cover" src="{{item.al.picUrl}}" bindtap="toSongDetail" data-songinfo="{{item}}" data-index="{{index}}"></image>
          <view class="desc">
           <text class="name">{{item.name}}</text>
           <text class="singer">{{item.ar[0].name}}</text>

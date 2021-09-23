@@ -26,7 +26,10 @@ App({
     navBarHeight: 0,  // 导航栏高度
     menuBottom: 0, // 胶囊距离底部间距
     menuRight: 0,  // 胶囊距离右边间距
-    menuHeight: 0  // 胶囊高度
+    menuHeight: 0,  // 胶囊高度
+    // 标识全局音乐播放
+    isMusicPlay: false,  // 是否有音乐在播放
+    currentMusicId: '',  // 正在播放的音乐id
   },
   // 设置导航栏信息
   setNavBarInfo(){

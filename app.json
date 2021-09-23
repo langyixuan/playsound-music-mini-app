@@ -1,12 +1,16 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/recommendSong/recommendSong",
+    "pages/songDetail/songDetail",
+    "pages/index/index",
     "pages/video/video",
     "pages/personal/personal",
     "pages/login/login",
     "pages/search/search",
     "components/Navigation/Navigation"
+  ],
+  "requiredBackgroundModes": [
+    "audio"
   ],
   "window": {
     "navigationStyle": "custom"

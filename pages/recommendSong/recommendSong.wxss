@@ -52,6 +52,7 @@
 }
 
 .songs-scroll {
+  margin-top: 20rpx;
   height: calc(100vh - 480rpx);
 }
 
