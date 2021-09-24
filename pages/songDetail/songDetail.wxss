@@ -21,6 +21,7 @@
   top: 13vh;
   left: 0;
   width: 100vw;
+  height: calc(100vh - 13vh);
   padding: 0 80rpx;
   box-sizing: border-box;
   color: #fff;
@@ -65,16 +66,42 @@
 }
 
 /* 歌词 */
-.song-detail .lyric {
-  height: 120rpx;
+.song-detail .lyric-box {
+  height: 110rpx;
   width: 100%;
   /* background-color: red; */
+  overflow-y: hidden;
+}
+
+.lyric-box .lyric {
+  line-height: 32rpx;
+}
+
+.lyric text {
+  font-size: 20rpx;
+  font-weight: 700;
+  white-space: pre-wrap;
+  word-break: break-all;
+	word-wrap: break-word;
+}
+
+.lyric .hidden {
+  display: none;
+}
+
+.lyric .text-glow {
+  text-shadow: 0 0 2rpx #fff, 0 0 4rpx #fff;
 }
 
 /* 播放进度条 */
 .progress-bar {
+  position: absolute;
+  bottom: 160rpx;
+  left: 0;
   width: 100%;
+  padding: 0 80rpx;
   margin: 30rpx 0;
+  box-sizing: border-box;
   /* background-color: #ccc; */
 }
 
@@ -87,7 +114,6 @@
   font-weight: 900;
   margin-bottom: 10rpx;
 }
-
 
 .main-progress {
   position: relative;
@@ -118,15 +144,17 @@
   box-shadow: 0 0 6rpx #fff, 0 0 12rpx #fff, 0 0 18rpx #fff;
 }
 
-
-
-
-
-
-
-
 /* 歌曲控制栏 */
-.song-detail .control {
+.song-detail .control-nav {
+  position: absolute;
+  bottom: 60rpx;
+  left: 0;
+  width: 100%;
+  padding: 0 80rpx;
+  box-sizing: border-box;
+}
+
+.control-nav .control {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -137,7 +165,7 @@
   font-size: 50rpx;
 }
 
-.control .icon-suijibofang, .control .icon-xiazai1 {
+.control .playmode, .control .icon-xiazai1 {
   color: #ccc;
   font-size: 34rpx;
 }

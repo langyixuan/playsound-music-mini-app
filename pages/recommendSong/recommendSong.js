@@ -63,25 +63,47 @@ Page({
     }
     this.getTodayDate()
     this.getTodayRecommendSongs()
+    
+    // 订阅来自songDetail页面发送来的歌曲播放模式
+    PubSub.subscribe('playMode', (msg, playMode) => {
+      this.setData({ playMode })
+    })
 
     // 订阅来自songDetail页面发送来的数据
-    PubSub.subscribe('switchType', (msg, type) => {
+    PubSub.subscribe('switchType', (msg, typeObj) => {
+      let switchType = typeObj.switchmode
+      let playMode = typeObj.playmode
+      console.log(switchType, playMode)
       let { todaySongs, index } = this.data
-      if (type === 'prev') {
-        // 如果在第一首歌曲上触发上一首操作，则跳到最后一首
-        if (index === 0) {
-          index = todaySongs.length - 1
-        } else {
-          index -= 1
-        }  
-      } else {
-        // 如果在第最后一首歌曲上触发下一首操作，则跳到第一首
-        if (index === todaySongs.length - 1) {
-          index = 0
-        } else {
-          index += 1
-        }
+      switch(playMode) {
+        case 0:  // 列表循环
+          if (switchType === 'prev') {
+            // 如果在第一首歌曲上触发上一首操作，则跳到最后一首
+            if (index === 0) {
+              index = todaySongs.length - 1
+            } else {
+              index -= 1
+            }
+          } else {
+            // 如果在第最后一首歌曲上触发下一首操作，则跳到第一首
+            if (index === todaySongs.length - 1) {
+              index = 0
+            } else {
+              index += 1
+            }
+          }
+          break
+        case 2:   //随机播放
+          let randomIndex = Math.floor(Math.random() * todaySongs.length)
+          while (randomIndex === index) {
+            randomIndex = Math.floor(Math.random() * todaySongs.length)
+          }
+          index = randomIndex
+          break
+        default:  // 单曲循环
+          index = index
       }
+      
       this.setData({ index })
       let songData = todaySongs[index]
       PubSub.publish('currentSongData', songData)

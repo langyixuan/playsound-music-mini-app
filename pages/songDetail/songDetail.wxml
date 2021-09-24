@@ -20,7 +20,10 @@
       <icon class="iconfont icon-gengduomore10"></icon>
     </view>
     <!-- 歌词 -->
-    <view class="lyric">
+    <view class="lyric-box">
+      <view class="lyric" wx:for="{{lyricArr}}" wx:key="index">
+        <text class="{{currentTimeForLr > allKeys[index + 1] ? 'hidden' : ''}} {{currentTimeForLr > allKeys[index] && currentTimeForLr < allKeys[index+1] ? 'text-glow' : ''}}">{{item.lr}}</text>
+      </view>
     </view>
     <!-- 播放进度条 -->
     <view class="progress-bar">
@@ -36,12 +39,18 @@
       </view>
     </view>
     <!-- 音乐控制栏 -->
-    <view class="control">
-      <icon class="iconfont icon-suijibofang"></icon>
-      <icon class="iconfont icon-shangyishou" bindtap="handleSwitch" id="prev"></icon>
-      <icon class="iconfont {{isPlay ? 'icon-zanting' : 'icon-icon_play'}}" bindtap="handleMusicPlay"></icon>
-      <icon class="iconfont icon-xiayishou" bindtap="handleSwitch" id="next"></icon>
-      <icon class="iconfont icon-xiazai1"></icon>
+    <view class="control-nav">
+      <view class="control">
+        <view bindtap="changePlayMode">
+          <icon class="iconfont playmode icon-xunhuan" wx:if="{{playMode === 0}}"></icon>
+          <icon class="iconfont playmode icon-danquxunhuan1" wx:elif="{{playMode === 1}}"></icon>
+          <icon class="iconfont playmode icon-suijibofang" wx:else="{{playMode === 2}}"></icon>
+        </view>
+        <icon class="iconfont icon-shangyishou" bindtap="handleSwitch" data-switchmode="prev" data-playmode="{{playMode}}"></icon>
+        <icon class="iconfont {{isPlay ? 'icon-zanting' : 'icon-icon_play'}}" bindtap="handleMusicPlay"></icon>
+        <icon class="iconfont icon-xiayishou" bindtap="handleSwitch" data-switchmode="next" data-playmode="{{playMode}}"></icon>
+        <icon class="iconfont icon-xiazai1"></icon>
+        </view>
     </view>
   </view>
 </view>

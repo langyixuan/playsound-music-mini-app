@@ -1,7 +1,6 @@
 import PubSub from 'pubsub-js'
 import request from '../../utils/request'
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -12,6 +11,10 @@ Page({
     currentTime: '00:00',   // 当前歌曲播放进度
     durationTime: '00:00',  // 当前歌曲总时长
     currentWidth: 0,   // 播放进度条实时长度
+    lyricArr: [],   // 当前播放歌曲歌词
+    currentTimeForLr: 0,  // 这个是没有格式化的实时播放的进度(单位：s)
+    allKeys: [],  // 每条歌词对应时长
+    playMode: 0,   // 歌曲播放模式(0: 列表循环 1： 单曲循环 2： 随机播放)
   },
 
   // 返回上一页
@@ -47,6 +50,7 @@ Page({
     PubSub.subscribe('currentSongData', (msg, currentSongInfo) => {
       // 歌曲总时长（ms）
       let durationTime = this.formatMusicTime(currentSongInfo.dt / 1000)
+      this.getSongLyric(currentSongInfo.id)
       this.setData({ songInfo: currentSongInfo, durationTime })
       this.musicControl(true, currentSongInfo.id)
 
@@ -55,19 +59,60 @@ Page({
     })
   },
 
-  // 歌曲切换功能
+  // 歌曲切换功能 
   handleSwitch(event) {
     this.getCurrentSongData()
     // 给recommendSong页面发布歌曲切换的类型
-    PubSub.publish('switchType', event.currentTarget.id)
+    PubSub.publish('switchType', event.currentTarget.dataset )
   },
 
   // 格式化歌曲时长(秒——xx:xx)
   formatMusicTime(time) {
     let min = parseInt(time / 60)
     let sec = parseInt(time) % 60
-    return `${min > 10 ? min : '0' + min}:${sec > 10 ? sec : '0' + sec}`
+    return `${min >= 10 ? min : '0' + min}:${sec >= 10 ? sec : '0' + sec}`
   },
+
+  // 获取歌词数据
+  async getSongLyric(id) {
+    let res = await request('/lyric', { id })
+    // 处理歌词格式
+    let lyricContent = res.lrc.lyric 
+    let lyricArr = []
+    let lyrics = lyricContent.split('\n')
+    let reg = /\[\d*:\d*(\.|:)\d*]/g
+    for (let i = 0; i < lyrics.length; i++) {
+      let lyricObj = {}
+      let timeReg = lyrics[i].match(reg)
+      if (!timeReg) continue
+      let t = timeReg[0]
+      let min = Number(t.match(/\[\d*/i).toString().slice(1))
+      let sec = Number(t.match(/\:\d*/i).toString().slice(1))
+      t = min * 60 + sec
+      let content = lyrics[i].replace(timeReg, '')
+      lyricObj.time = t
+      lyricObj.lr = content
+      lyricArr.push(lyricObj)
+    }
+    // 将每条歌词对应的时间保存起来，方便后期操作歌词
+    let allKeys = []
+    for (let obj of lyricArr) {
+      allKeys.push(obj.time)
+    }
+    this.setData({ lyricArr, allKeys })
+  },
+
+  // 切换歌曲播放模式
+  changePlayMode() {
+    let { playMode } = this.data
+    if (playMode < 2) {
+      playMode++
+    } else {
+      playMode = 0
+    }
+    this.setData({ playMode })
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
@@ -77,6 +122,8 @@ Page({
     const songInfo = JSON.parse(decodeURIComponent(options.songInfo))
     // 歌曲总时长（ms）
     let durationTime = this.formatMusicTime(songInfo.dt / 1000)
+    // 获取当前歌曲歌词
+    this.getSongLyric(songInfo.id)
     this.setData({ songInfo, durationTime })
     // 获取全局唯一的背景音频管理器
     this.bgAudioManager = wx.getBackgroundAudioManager()
@@ -95,10 +142,7 @@ Page({
       PubSub.publish('switchType', 'next')
       this.getCurrentSongData()
     })
-    // 歌曲播放完毕后，自动切换到下一首歌曲
-    // this.bgAudioManager.onEnded(() => {
-    //   PubSub.publish('switchType', 'next')
-    // })
+
     this.musicControl(true, this.data.songInfo.id)
 
     // 监听背景音乐的播放进度更新事件
@@ -106,7 +150,8 @@ Page({
       // 获取当前音乐实时播放的位置
       let currentTime = this.formatMusicTime(this.bgAudioManager.currentTime)
       let currentWidth = this.bgAudioManager.currentTime / this.bgAudioManager.duration * 100
-      this.setData({ currentTime, currentWidth })
+      let currentTimeForLr = this.bgAudioManager.currentTime
+      this.setData({ currentTime, currentWidth, currentTimeForLr})
     }) 
   },
 
