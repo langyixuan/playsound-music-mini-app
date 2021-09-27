@@ -5,7 +5,11 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    
+    // 导航栏的背景颜色
+    bgcolor: {
+      type: String,
+      value: ''
+    }
   },
 
   /**
@@ -15,7 +19,7 @@ Component({
     navBarHeight: app.globalData.navBarHeight,
     menuBottom: app.globalData.menuBottom,
     menuRight: app.globalData.menuRight,
-    menuHeight: app.globalData.menuHeight
+    menuHeight: app.globalData.menuHeight,
   },
 
   /**
