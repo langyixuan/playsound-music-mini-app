@@ -7,16 +7,18 @@
 .index-container {
   padding: 0 40rpx;
 }
+
 /* 自定义导航栏 */
 .navbar-title {
   color: #fff;
 }
+
 /* 新碟上架区域 */
 .new-album {
   height: 500rpx;
   display: flex;
   margin-bottom: 32rpx;
-  margin-top: 200rpx;
+  /* margin-top: 200rpx; */
 }
 
 .new-album .album-item{
@@ -149,39 +151,40 @@
   color: #fff;
 }
 
-/* 每日推荐区域 */
-.re-daily-swiper {
-  height: 360rpx;
+/* 新歌速递区域 */
+.new-songs .songs-swiper {
+  height: 440rpx;
 }
 
-.re-daily-swiper {
-  height: 360rpx;
-}
-
-.re-item .item {
+.songs-swiper .song-item {
   display: flex;
   align-items: center;
   margin-bottom: 20rpx;
-  position: relative;
 }
 
-.re-item .item image {
-  width: 100rpx;
-  height: 100rpx;
+.song-item image {
+  width: 90rpx;
+  height: 90rpx;
   object-fit: cover;
   border-radius: 10rpx;
   margin-right: 40rpx;
 }
 
-.re-item .item .desc {
+.song-item .desc {
+  width: 380rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   display: flex;
   flex-direction: column;
   font-weight: 700;
+  margin-right: 20rpx;
 }
 
 .desc .name {
   font-size: 26rpx;
   color: #fff;
+
 }
 
 .desc .singer {
@@ -189,12 +192,56 @@
   color: #ccc;
 }
 
-.re-item .item .iconfont {
+.song-item .iconfont {
   color: blue;
-  font-size: 46rpx;
-  position: absolute;
-  right: 60rpx;
 }
+
+/* 每日推荐区域 */
+.daily-recommend {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.daily-recommend .item {
+  position: relative;
+  width: 48%;
+  height: 200rpx;
+  background-color: #1E1F1F;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.item .cover {
+  position: absolute;
+  right: -150rpx;
+  top: 50rpx;
+  width: 300rpx;
+  height: 300rpx;
+  object-fit: cover;
+  border-radius: 20rpx;
+}
+
+.item .name {
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  color: #fff;
+  font-weight: 700;
+  font-size: 24rpx;
+}
+
+.item .en {
+  position: absolute;
+  bottom: 50rpx;
+  left: 20rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+  color: blue;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
 
 
 

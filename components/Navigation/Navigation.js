@@ -9,6 +9,10 @@ Component({
     bgcolor: {
       type: String,
       value: ''
+    },
+    navPosition: {
+      type: String,
+      value: ''
     }
   },
 

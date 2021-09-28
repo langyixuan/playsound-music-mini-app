@@ -4,12 +4,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    newAlbum: [],
-    rePlaylist1: [],
+    newAlbum: [],   // 新碟上架数据
+    rePlaylist1: [],   // 精品歌单
     rePlaylist2: [],
-    reAlbum: [],
-    reAlbumDetail: [],
-    reDailyMusic: []
+    reAlbum: [],   // 专辑推荐
+    reAlbumDetail: [],  // 推荐专辑详情
+    newSongs: [],   // 新歌速递数据
+  },
+
+  // 进入今日推荐详情页面
+  toDailyDetail(event) {
+    if (event.currentTarget.id === 'song') {
+      wx.navigateTo({
+        url: '/pages/recommendSong/recommendSong',
+      })
+    }
   },
 
   /**
@@ -30,14 +39,15 @@ Page({
     let reAlbumData = await request('/album/list', {
       limit: 5,
     })
-    // 获取每日推荐歌曲
-    let reDailyMusicData = await request('/recommend/songs')
-    let reDailyMusicArr = []
-    for(let i = 0; i < 4; i++) {
+    // 新歌速递
+    let newSongsData = await request('/top/song', { type: 96})
+    let newSongsArr = []
+    for (let i = 0; i < 5; i++) {
       let obj = {}
-      obj.music = reDailyMusicData.data.dailySongs.slice(3*i, (i+1) * 3)
-      reDailyMusicArr.push(obj)
-    }
+      obj.newSong = newSongsData.data.slice(4*i, (i+1) * 4)
+      newSongsArr.push(obj)
+    } 
+
     /**
      * 获取推荐专辑详情
      * 由于推荐专辑接口中的数据不详细，不能满足显示需求，所以要带着相应专辑的id去再次请求专辑详情数据
@@ -59,7 +69,7 @@ Page({
       rePlaylist2: rePlaylistData.playlists.slice(5, 10),
       reAlbum: reAlbumData.products,
       reAlbumDetail: reAlbumDetailData,
-      reDailyMusic: reDailyMusicArr
+      newSongs: newSongsArr
     })
 
     /**测试数据 */

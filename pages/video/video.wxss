@@ -12,7 +12,6 @@
 .nav-scroll {
   display: flex;
   white-space: nowrap;
-  margin-top: 160rpx;
   color: #fff;
   height: 100rpx;
 }

@@ -13,6 +13,11 @@ Component({
     router: {
       type: String,
       value: ''
+    },
+    // 是否显示更多按钮
+    showmore: {
+      type: String,
+      value: 'true'
     }
   },
 

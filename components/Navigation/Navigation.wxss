@@ -1,9 +1,16 @@
+.nav {
+  margin-bottom: 40rpx;
+}
+
+.nav-position {
+  position: fixed;
+}
+
 .nav-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  /* background-color: red; */
   z-index: 100;
 }
 
@@ -17,6 +24,5 @@
   width: 100%;
   padding: 0 40rpx;
   position: absolute;
-  /* background-color: red; */
   box-sizing: border-box;
 }

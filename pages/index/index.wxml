@@ -1,5 +1,5 @@
 <view class="index-container">
-  <Navigation class="navigation">
+  <Navigation class="navigation" bgcolor="#1A1A1A">
     <image src="/static/images/logo.png"></image>
   </Navigation>
   <!-- 新碟上架区域 -->
@@ -12,9 +12,52 @@
     </view>
   </scroll-view>
 
-  <!-- 每日推荐区域 -->
-  <view class="daily-recommend">
-    <NavHeader title="每日推荐歌曲" router="/pages/recommendSong/recommendSong"></NavHeader>
+  <!-- 新歌速递区域 -->
+  <view class="new-songs">
+    <NavHeader title="新歌速递" showmore="false"></NavHeader>
+    <swiper class="songs-swiper" circular next-margin="40rpx">
+      <swiper-item wx:for="{{newSongs}}" wx:key="index" wx:for-item="song">
+        <view class="song-item" wx:for="{{song.newSong}}" wx:key="id">
+          <image src="{{item.album.picUrl}}"></image>
+          <view class="desc">
+            <text class="name">{{item.name}}</text>
+            <text class="singer">{{item.artists[0].name}}</text>
+          </view>
+          <icon class="iconfont icon-pulse"></icon>     
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+   <!-- 每日推荐区域 -->
+  <view class="daily">
+    <NavHeader title="每日推荐" showmore="false"></NavHeader>
+    <view class="daily-recommend" bindtap="toDailyDetail" id="song">
+      <view class="item">
+      <text class="name">每日推荐歌曲</text>
+      <text class="en">SONG</text>
+      <image  class="cover" src="https://coloredvinylrecords.com/pictures/m/miami-nights-1984-turbulence.png"></image>
+    </view>
+    <view class="item" bindtap="toDailyDetail" id="playlist">
+      <text class="name">每日推荐歌单</text>
+      <text class="en">PLAYLIST</text>
+      <image  class="cover" src="https://coloredvinylrecords.com/pictures/t/the-murderburgers-what-a-mess.png"></image>
+    </view>
+    </view>
+  </view>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <view class="daily-recommend">
+    <NavHeader title="每日推荐歌曲" router="/pages/recommendSong/recommendSong" showmore="false"></NavHeader>
     <swiper circular next-margin="40rpx" class="re-daily-swiper">
       <swiper-item wx:for="{{reDailyMusic}}" wx:key="index">
         <view class="re-item">
@@ -45,15 +88,15 @@
         </view>
       </swiper-item>
     </swiper>
-  </view>
+  </view> -->
 
   <!-- 专辑推荐区域 -->
   <view class="re-album">
     <NavHeader title="专辑推荐"></NavHeader>
     <swiper circular next-margin="40rpx" class="re-album-swiper">
-      <swiper-item wx:for="{{reAlbumDetail}}" wx:key="{{album.albumId}}">
+      <swiper-item wx:for="{{reAlbumDetail}}" wx:key="index">
         <view class="re-album-item">
-           <image src="http://pngimg.com/uploads/vinyl/vinyl_PNG75.png" class="record"></image>
+           <image src="https://coloredvinylrecords.com/pictures/a/avenged-sevenfold-nightmare.png" class="record"></image>
            <image src="{{item.album.coverUrl}}" class="cover"></image>
            <text class="name">{{item.album.albumName}}</text>
            <text class="artist">{{item.album.artistName}}</text>

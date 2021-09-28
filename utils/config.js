@@ -3,5 +3,5 @@ export default {
   // baseUrl（内网请求地址 )
   host: 'http://localhost:3000',
   // 外网请求地址
-  mobileHost: 'http://xecf8z.natappfree.cc'
+  // mobileHost: 'http://medc2u.natappfree.cc'
 }

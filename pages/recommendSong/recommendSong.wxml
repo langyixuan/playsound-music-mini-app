@@ -1,7 +1,7 @@
 <!-- 每日推荐页面 -->
 <view class="daily-recommend-container">
   <!-- 自定义导航区域 -->
-  <Navigation class="navigation">
+  <Navigation class="navigation" navPosition="fixed">
     <icon class="iconfont icon-zuojiantou-" bindtap="back"></icon>
   </Navigation>
   <image src="https://cdn.dribbble.com/users/478988/screenshots/5957389/webp.net-gifmaker.gif" class="top-bg"></image>

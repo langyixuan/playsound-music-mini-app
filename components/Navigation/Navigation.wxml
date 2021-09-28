@@ -1,9 +1,11 @@
 <!-- 自定义导航栏组件 -->
-<view class="nav-container" style="height: {{navBarHeight}}px;background:{{bgcolor}}">
+<view style="height: {{navBarHeight}}px" class="nav {{navPosition ? 'nav-position' : ''}}">
+  <view class="nav-container" style="height: {{navBarHeight}}px;background:{{bgcolor}}">
   <view class="nav-box">
     <view class="navbar" style="height:{{menuHeight}}px; min-height:{{menuHeight}}px; line-height:{{menuHeight}}px; bottom:{{menuBottom}}px;"> 
       <!-- 自定义内容区域 -->
       <slot></slot>
     </view>
   </view>
+</view>
 </view>
