@@ -3,10 +3,6 @@
 }
 
 /* 自定义导航区域 */
-.navigation {
-  /* background-color: red; */
-}
-
 .navigation text, icon {
   color: #fff;
   font-size: 36rpx;

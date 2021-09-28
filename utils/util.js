@@ -21,4 +21,15 @@ const unique = function(arr) {
   return Array.from(new Set(arr))
 }
 
-export { debounce, unique }
+// 获取当日日期
+const getTodayDate = function() {
+  let today = []
+  let date = new Date().getDate()
+  today.push(date < 10 ? "0" + date : date)
+  let month = new Date().getMonth() + 1
+  today.push(month < 10 ? "0" + month : month)
+  return today
+}
+
+
+export { debounce, unique, getTodayDate }

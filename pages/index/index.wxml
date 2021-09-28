@@ -23,7 +23,7 @@
             <text class="name">{{item.name}}</text>
             <text class="singer">{{item.artists[0].name}}</text>
           </view>
-          <icon class="iconfont icon-pulse"></icon>     
+          <!-- <icon class="iconfont icon-pulse"></icon>      -->
         </view>
       </swiper-item>
     </swiper>

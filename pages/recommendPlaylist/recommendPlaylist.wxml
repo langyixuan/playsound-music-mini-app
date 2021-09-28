@@ -1,0 +1,35 @@
+<!-- 每日推荐歌单页面 -->
+<wxs module="filters" src="../../utils/filters.wxs"></wxs>
+<view class="recommend-playlist">
+  <Navigation class="navigation" bgcolor="linear-gradient(0deg, rgba(34,193,195,0) 0%, rgba(0,69,252,0.6337885495995272) 100%)">
+    <icon class="iconfont icon-zuojiantou-" bindtap="back"></icon>
+  </Navigation>
+
+  <!-- 当日日期 -->
+  <view class="today">
+     <text class="day">{{today[0]}}</text>
+     <text class="month">/{{today[1]}}</text>
+  </view>
+
+  <!-- 歌单列表区域 -->
+  <view class="playlist-container">
+    <view class="item" wx:for="{{todayPlaylist}}" wx:key="id" style="flex-direction: {{index % 2 === 0 ? 'row' : 'row-reverse'}}">
+      <image src="{{item.picUrl}}" class="cover"></image>
+      <view class="desc">
+        <text class="num">{{index + 1}}</text>
+        <text class="name">{{item.name}}</text>
+        <text class="reason">推荐原因：{{item.copywriter}}</text>
+        <text class="create-time">{{filters.formatTime(item.createTime)}}创建</text>
+        <view class="count">
+          <text>播放 {{filters.formatBigNum(item.playcount)}}</text>
+          <text>{{item.trackCount}} 首歌</text>
+        </view>
+        <view class="creator">
+          <image src="{{item.creator.avatarUrl}}"></image>
+          <text>{{item.creator.nickname}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+</view>

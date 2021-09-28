@@ -1,0 +1,30 @@
+/**
+ * 对数据做过滤处理
+ */
+
+var filters = {
+  // 转换数值大的数字， 超过一万转换成万， 超过一亿转换成亿
+   formatBigNum: function(data) {
+     if (data >= 10000 && data < 100000000) {
+       return Math.floor(data / 10000) + '万' 
+     } else if (data >= 100000000) {
+       return (data / 100000000).toFixed(1) + '亿'
+     }
+  },
+
+  // 将时间戳转换成"yyyy-mm-dd"的格式
+  formatTime: function(t) {
+      var time = getDate(t)
+      var year = time.getFullYear()
+      var month = time.getMonth() + 1
+      if (month < 10) { month = '0' + month }
+      var day = time.getDay()
+      if (day < 10) { day = '0' + day }
+      return year + '-' + month + '-' + day
+    }
+}
+ 
+module.exports = { 
+  formatBigNum: filters.formatBigNum,
+  formatTime: filters.formatTime 
+  }

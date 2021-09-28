@@ -14,9 +14,19 @@ Page({
 
   // 进入今日推荐详情页面
   toDailyDetail(event) {
-    if (event.currentTarget.id === 'song') {
+    if (wx.getStorageSync('loginCookie')) {
+      if (event.currentTarget.id === 'song') {
+        wx.navigateTo({
+          url: '/pages/recommendSong/recommendSong',
+        })
+      } else {
+        wx.navigateTo({
+          url: '/pages/recommendPlaylist/recommendPlaylist',
+        })
+      }
+    } else {
       wx.navigateTo({
-        url: '/pages/recommendSong/recommendSong',
+        url: '/pages/login/login',
       })
     }
   },

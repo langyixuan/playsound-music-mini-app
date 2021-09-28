@@ -1,5 +1,6 @@
 import request from '../../utils/request'
 import PubSub from 'pubsub-js'
+import { getTodayDate } from '../../utils/util.js'
 Page({
   /**
    * 页面的初始数据
@@ -8,16 +9,6 @@ Page({
     today: [],   // 当天的日期
     todaySongs: [],  // 今日推荐歌曲数据
     index: 0,    // 当前播放歌曲在今日推荐歌曲列表中的索引值
-  },
-
-  // 获取当日日期
-  getTodayDate() {
-    let today = []
-    let date = new Date().getDate()
-    today.push(date < 10 ? "0" + date : date)
-    let month = new Date().getMonth() + 1
-    today.push(month < 10 ? "0" + month : month)
-    this.setData({ today })
   },
 
   // 获取今日推荐歌曲
@@ -61,7 +52,10 @@ Page({
         }
       })
     }
-    this.getTodayDate()
+    // 获取当日日期
+    let today = getTodayDate()
+    this.setData({ today })
+    
     this.getTodayRecommendSongs()
     
     // 订阅来自songDetail页面发送来的歌曲播放模式

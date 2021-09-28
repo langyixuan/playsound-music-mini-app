@@ -1,0 +1,122 @@
+.recommend-playlist {
+  /* margin-top: 40rpx; */
+}
+
+.today {
+  color: #fff;
+  font-weight: 700;
+  margin-left: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.today .day {
+  font-size: 80rpx;
+}
+
+.today .month {
+  font-size: 40rpx;
+}
+
+/* 自定义导航区域 */
+.navigation text, icon {
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.navigation .iconfont {
+  font-size: 50rpx;
+  margin-right: 40rpx;
+}
+
+/* 歌单列表区域 */
+.playlist-container {
+  width: 100%;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+
+.playlist-container .item {
+  width: 100%;
+  display: flex;
+  /* flex-direction: row-reverse; */
+  justify-content: space-between;
+  margin-bottom: 80rpx;
+}
+
+.item .cover {
+  width: 43vw;
+  height: 43vw;
+  object-fit: cover;
+  border-radius: 20rpx;
+}
+
+.item .desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: 43vw;
+  height: 43vw;
+  color: #fff;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.desc .name {
+  font-size: 28rpx;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.desc text {
+  display: block;
+}
+
+.desc .num {
+  position: absolute;
+  bottom: 0;
+  right: 0rpx;
+  font-size: 250rpx;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.05);
+  /* font-style: italic; */
+  z-index: 1;
+}
+
+.desc .reason , .desc .create-time{
+  color: #ccc;
+  font-size: 24rpx;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.desc .count text{
+  display: inline-block;
+  margin-right: 20rpx;
+  font-size: 20rpx;
+}
+
+.desc .creator {
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+}
+
+.creator image {
+  width: 40rpx;
+  height: 40rpx;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 16rpx;
+}
+
+.creator text {
+  font-size: 24rpx;
+}
