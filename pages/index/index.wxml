@@ -46,50 +46,6 @@
     </view>
   </view>
 
-
-
-
-
-
-
-
-
-
-
-  <!-- <view class="daily-recommend">
-    <NavHeader title="每日推荐歌曲" router="/pages/recommendSong/recommendSong" showmore="false"></NavHeader>
-    <swiper circular next-margin="40rpx" class="re-daily-swiper">
-      <swiper-item wx:for="{{reDailyMusic}}" wx:key="index">
-        <view class="re-item">
-          <view class="item">
-            <image src="{{item.music[0].al.picUrl}}"></image>
-            <view class="desc">
-              <text class="name">{{item.music[0].name}}</text>
-              <text class="singer">{{item.music[0].ar[0].name}}</text>
-            </view>
-            <icon class="iconfont icon-pulse"></icon>     
-          </view>
-           <view class="item">
-            <image src="{{item.music[1].al.picUrl}}"></image>
-            <view class="desc">
-              <text class="name">{{item.music[1].name}}</text>
-              <text class="singer">{{item.music[1].ar[0].name}}</text>
-            </view> 
-            <icon class="iconfont icon-pulse"></icon>     
-          </view>
-           <view class="item">
-            <image src="{{item.music[2].al.picUrl}}"></image>
-            <view class="desc">
-              <text class="name">{{item.music[2].name}}</text>
-              <text class="singer">{{item.music[2].ar[0].name}}</text>
-            </view>  
-            <icon class="iconfont icon-pulse"></icon>     
-          </view>
-        </view>
-      </swiper-item>
-    </swiper>
-  </view> -->
-
   <!-- 专辑推荐区域 -->
   <view class="re-album">
     <NavHeader title="专辑推荐"></NavHeader>
@@ -111,13 +67,13 @@
     <NavHeader title="精选歌单"></NavHeader>
     <scroll-view class="scroll-playlist" scroll-x enable-flex>
       <view class="playlist-item" wx:for="{{rePlaylist1}}" wx:key="id">
-        <image src="{{item.coverImgUrl}}"></image>
+        <image src="{{item.coverImgUrl}}" bindtap="toPlaylistDetail" id="{{item.id}}"></image>
         <text>{{item.name}}</text>
       </view>
     </scroll-view>
     <scroll-view class="scroll-playlist" scroll-x enable-flex>
       <view class="playlist-item" wx:for="{{rePlaylist2}}" wx:key="id">
-        <image src="{{item.coverImgUrl}}"></image>
+        <image src="{{item.coverImgUrl}}" bindtap="toPlaylistDetail" id="{{item.id}}"></image>
         <text>{{item.name}}</text>
       </view>
     </scroll-view>

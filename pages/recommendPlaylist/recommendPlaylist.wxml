@@ -14,7 +14,7 @@
   <!-- 歌单列表区域 -->
   <view class="playlist-container">
     <view class="item" wx:for="{{todayPlaylist}}" wx:key="id" style="flex-direction: {{index % 2 === 0 ? 'row' : 'row-reverse'}}">
-      <image src="{{item.picUrl}}" class="cover"></image>
+      <image src="{{item.picUrl}}" class="cover" bindtap="toPlaylistDetail" id="{{item.id}}"></image> 
       <view class="desc">
         <text class="num">{{index + 1}}</text>
         <text class="name">{{item.name}}</text>

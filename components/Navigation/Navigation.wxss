@@ -4,6 +4,7 @@
 
 .nav-position {
   position: fixed;
+  z-index:999;
 }
 
 .nav-container {

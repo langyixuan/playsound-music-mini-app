@@ -67,7 +67,7 @@
 
 /* 歌词 */
 .song-detail .lyric-box {
-  height: 110rpx;
+  height: 104rpx;
   width: 100%;
   /* background-color: red; */
   overflow-y: hidden;
@@ -78,7 +78,7 @@
 }
 
 .lyric text {
-  font-size: 20rpx;
+  font-size: 24rpx;
   font-weight: 700;
   white-space: pre-wrap;
   word-break: break-all;
@@ -102,7 +102,6 @@
   padding: 0 80rpx;
   margin: 30rpx 0;
   box-sizing: border-box;
-  /* background-color: #ccc; */
 }
 
 .progress-bar .time {

@@ -39,7 +39,6 @@
 .playlist-container .item {
   width: 100%;
   display: flex;
-  /* flex-direction: row-reverse; */
   justify-content: space-between;
   margin-bottom: 80rpx;
 }
@@ -87,14 +86,19 @@
   z-index: 1;
 }
 
-.desc .reason , .desc .create-time{
+.desc .create-time{
   color: #ccc;
-  font-size: 24rpx;
+  font-size: 20rpx;
   overflow : hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.desc .reason {
+  color: #ccc;
+  font-size: 22rpx;
 }
 
 .desc .count text{

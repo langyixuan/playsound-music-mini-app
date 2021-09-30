@@ -1,7 +1,7 @@
 <!-- 歌曲详情页面 -->
 <view class="song-detail-container">
   <!-- 自定义导航栏 -->
-  <Navigation class="navigation">
+  <Navigation class="navigation" navPosition="fixed">
     <icon class="iconfont icon-zuojiantou-" bindtap="back"></icon>
   </Navigation>
   <!-- 图片背景 -->

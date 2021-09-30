@@ -1,0 +1,44 @@
+<!-- 歌单详情页面 -->
+<wxs module="filters" src="../../utils/filters.wxs"></wxs>
+<view class="playlist-detail">
+  <!-- 自定义导航栏区域 -->
+  <Navigation class="navigation" navPosition="fixed">
+    <icon class="iconfont icon-zuojiantou-" bindtap="back"></icon>
+  </Navigation>
+
+  <!-- 顶部歌单介绍区域 -->
+  <view class="top-desc">
+    <image class="cover" src="{{playslitDetail.coverImgUrl}}"></image>
+  </view>
+  <view class="bg-blur">
+    <text class="name">{{playslitDetail.name}}</text>
+  </view>
+ 
+  <!-- 歌单介绍区域 -->
+  <view class="detail">
+    <view class="desc">
+      <text class="introduce">{{playslitDetail.description}}</text>
+      <text class="create-time">{{filters.formatTime(playslitDetail.createTime)}} 创建</text>
+      <view class="count">
+        <text>播放 {{filters.formatBigNum(playslitDetail.playCount)}}</text>
+        <text>喜欢 {{filters.formatBigNum(playslitDetail.subscribedCount)}}</text>
+      </view>
+    </view>
+    <view class="icon">
+      <icon class="iconfont"></icon>
+      <icon class="iconfont icon-xihuanlike"></icon>
+      <icon class="iconfont icon-gengduomore10"></icon>
+    </view>
+    <view class="tag">
+      <scroll-view class="tag-scroll" scroll-x enable-flex>
+      <text class="item" wx:for="{{playslitDetail.tags}}" wx:key="index">#{{item}}</text>
+    </scroll-view>
+    </view>
+  </view>
+
+  <!-- 歌曲列表区域 -->
+  <Songlist songsDetail="{{songsDetail}}"/>
+
+ 
+  
+</view>

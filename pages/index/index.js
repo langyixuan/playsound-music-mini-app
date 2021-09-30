@@ -14,21 +14,22 @@ Page({
 
   // 进入今日推荐详情页面
   toDailyDetail(event) {
-    if (wx.getStorageSync('loginCookie')) {
-      if (event.currentTarget.id === 'song') {
-        wx.navigateTo({
-          url: '/pages/recommendSong/recommendSong',
-        })
-      } else {
-        wx.navigateTo({
-          url: '/pages/recommendPlaylist/recommendPlaylist',
-        })
-      }
+    if (event.currentTarget.id === 'song') {
+      wx.navigateTo({
+        url: '/pages/recommendSong/recommendSong',
+      })
     } else {
       wx.navigateTo({
-        url: '/pages/login/login',
+        url: '/pages/recommendPlaylist/recommendPlaylist',
       })
     }
+  },
+
+  // 跳转至歌单详情页面
+  toPlaylistDetail(event) {
+    wx.navigateTo({
+      url: `/pages/playlistDetail/playlistDetail?id=${event.currentTarget.id}`,
+    })
   },
 
   /**

@@ -58,10 +58,10 @@ Page({
     
     this.getTodayRecommendSongs()
     
-    // 订阅来自songDetail页面发送来的歌曲播放模式
-    PubSub.subscribe('playMode', (msg, playMode) => {
-      this.setData({ playMode })
-    })
+    // // 订阅来自songDetail页面发送来的歌曲播放模式
+    // PubSub.subscribe('playMode', (msg, playMode) => {
+    //   this.setData({ playMode })
+    // })
 
     // 订阅来自songDetail页面发送来的数据
     PubSub.subscribe('switchType', (msg, typeObj) => {

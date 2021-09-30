@@ -8,7 +8,8 @@
     "pages/video/video",
     "pages/personal/personal",
     "pages/login/login",
-    "components/Navigation/Navigation"
+    "components/Navigation/Navigation",
+    "pages/playlistDetail/playlistDetail"
   ],
   "requiredBackgroundModes": [
     "audio"

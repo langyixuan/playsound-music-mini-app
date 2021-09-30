@@ -1,0 +1,13 @@
+<!-- 歌曲列表组件 -->
+<view class="songlist-container">
+  <scroll-view class="songs-scroll" scroll-y style="height: {{height}}">
+    <view class="song-item" wx:for="{{songsDetail}}" wx:key="id">
+      <image class="cover" src="{{item.al.picUrl}}" bindtap="toSongdDetail" data-songinfo="{{item}}" data-index="{{index}}"></image>
+      <view class="desc">
+        <text class="name">{{item.name}}</text>
+        <text class="singer">{{item.ar[0].name}}</text>
+      </view>
+      <icon class="iconfont icon-gengduo"></icon>
+    </view>
+  </scroll-view>
+</view>

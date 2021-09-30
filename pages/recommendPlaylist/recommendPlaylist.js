@@ -19,10 +19,36 @@ Page({
     })
   },
 
+  // 跳转至歌单详情页面
+  toPlaylistDetail(event) {
+    wx.navigateTo({
+      url: `/pages/playlistDetail/playlistDetail?id=${event.currentTarget.id}`,
+    })
+  },
+
+  // 返回至上个页面
+  back() {
+    wx.navigateBack()
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 因为该页需要登录权限，所以先判断用户是否登录
+    let userInfo = wx.getStorageSync('userInfo')
+    if (!userInfo) {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none',
+        success: () => {
+          // 跳转到登录界面
+          wx.reLaunch({
+            url: '/page/login/login'
+          })
+        }
+      })
+    }
     this.getTodayPlaylist()
     let today = getTodayDate()
     this.setData({ today })

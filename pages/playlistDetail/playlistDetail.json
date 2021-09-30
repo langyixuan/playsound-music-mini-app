@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "Navigation": "/components/Navigation/Navigation",
+    "Songlist": "/components/Songlist/Songlist"
+  }
+}
