@@ -23,8 +23,6 @@ Page({
   handleInputChange: debounce(function (event) {
     this.setData({ keywords: event.detail.value.trim() })
     this.getSearchList()
-    console.log(event)
-    console.log(event.detail.value.trim())
   }, 1000),
 
   // 获取输入关键字模糊匹配搜索结果
@@ -50,6 +48,15 @@ Page({
   // 清空输入框
   clearInput() {
     this.setData({ keywords: '' })
+  },
+
+  // 跳转至推荐歌曲类型详情页
+  toTypeDetail(event) {
+    let { type } = event.currentTarget.dataset
+    let typeObj = encodeURIComponent(JSON.stringify(type))
+    wx.navigateTo({
+      url: `/pages/recommendMusicType/recommendMusicType?typeObj=${typeObj}`,
+    })
   },
 
 

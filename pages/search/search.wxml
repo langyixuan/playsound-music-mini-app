@@ -38,7 +38,7 @@
 
     <!-- 歌曲类型推荐区域 -->
     <view class="music-type">
-      <view class="type-item" wx:for="{{typeObj}}" wx:key="type">
+      <view class="type-item" wx:for="{{typeObj}}" wx:key="type" bindtap="toTypeDetail" data-type="{{item}}">
         <text class="type"> {{item.type}}</text>
         <text class="ch-type">#{{item.ch}}</text>
         <image class="cover" src="{{item.cover}}"></image>

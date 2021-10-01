@@ -16,7 +16,12 @@ App({
     // 调用函数设置自定义导航栏信息
     this.setNavBarInfo()
 
-    console.log(this)
+    // 加载字体
+    // wx.loadFontFace({
+    //   family: 'Gluten',
+    //   source: ' url("https://fonts.googleapis.com/css2?family=Gluten:wght@100&display=swap")',
+    //   success: console.log
+    // })
 
   },
   // 全局数据管理

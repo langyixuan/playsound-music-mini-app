@@ -1,16 +1,17 @@
 {
   "pages": [
-    "pages/playlist/playlist",
-    "pages/index/index",
-    "pages/recommendPlaylist/recommendPlaylist",
     "pages/search/search",
+    "pages/index/index",
+    "pages/playlist/playlist",
+    "pages/recommendPlaylist/recommendPlaylist",
     "pages/recommendSong/recommendSong",
     "pages/songDetail/songDetail",
     "pages/video/video",
     "pages/personal/personal",
     "pages/login/login",
     "components/Navigation/Navigation",
-    "pages/playlistDetail/playlistDetail"
+    "pages/playlistDetail/playlistDetail",
+    "pages/recommendMusicType/recommendMusicType"
   ],
   "requiredBackgroundModes": [
     "audio"

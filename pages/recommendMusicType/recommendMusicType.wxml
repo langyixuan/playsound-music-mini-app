@@ -1,0 +1,19 @@
+<!-- 推荐音乐类型页面 -->
+<view class="recommend-music-type">
+  <!-- 自定义导航区域 -->
+ <Navigation class="navigation" navPosition="fixed">
+    <icon class="iconfont icon-zuojiantou-" bindtap="back"></icon>
+  </Navigation>
+
+  <!-- 顶部背景区域 -->
+  <view class="top">
+    <!-- <image class="blur-bg" src="{{typeObj.cover}}"></image> -->
+    <image class="top-bg" src="{{typeObj.cover}}"></image>
+    <view class="type-name">{{typeObj.type}}</view>
+  </view>
+
+    <!-- 歌单列表区域 -->
+  <scroll-view class="playlist-scroll" scroll-y enable-flex bindscrolltolower="handleScrollToLower">
+    <PlaylistItem  wx:for="{{playlists}}" wx:key="index" playlistItem="{{item}}"/>
+  </scroll-view>
+</view>

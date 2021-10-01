@@ -1,0 +1,76 @@
+.recommend-music-type {
+}
+
+/* 自定义导航区域 */
+.navigation text, icon {
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.navigation .iconfont {
+  font-size: 50rpx;
+  margin-right: 40rpx;
+}
+
+/* 顶部背景区域 */
+.top {
+  width: 100%;
+  height: 60vw;
+  position: relative;
+}
+
+.top .top-bg {
+  position: absolute;
+  top: -30vw;
+  right: -20vw;
+  width: 90vw;
+  height: 90vw;
+  object-fit: cover;
+  animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.top .blur-bg {
+  position: absolute;
+  top: -29vw;
+  right: -19vw;
+  width: 90vw;
+  height: 90vw;
+  object-fit: cover;
+  filter: blur(16rpx) brightness(100%) opacity(1);
+}
+
+.top .type-name {
+  position: absolute;
+  bottom: 40rpx;
+  left: 40rpx;
+  font-size: 100rpx;
+  font-weight: 700;
+  color: rgb(241, 241, 238);
+  opacity: 0.85;
+  font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-style: italic;
+  text-shadow: 0 0 6rpx #fff;
+}
+
+/* 歌单列表区域 */
+.playlist-scroll {
+  width: 100%;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  height: calc(100vh - 60vw - 40rpx);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 40rpx;
+}
+

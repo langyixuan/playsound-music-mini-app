@@ -12,5 +12,4 @@
   <scroll-view class="playlist-scroll" scroll-y enable-flex bindscrolltolower="handleScrollToLower">
     <PlaylistItem  wx:for="{{currentPlaylist}}" wx:key="id" playlistItem="{{item}}"/>
   </scroll-view>
-
 </view>

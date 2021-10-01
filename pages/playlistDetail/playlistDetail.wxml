@@ -38,7 +38,4 @@
 
   <!-- 歌曲列表区域 -->
   <Songlist songsDetail="{{songsDetail}}"/>
-
- 
-  
 </view>

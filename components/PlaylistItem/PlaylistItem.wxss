@@ -50,6 +50,7 @@
 }
 
 .playlist-item .count {
-  color: rgb(40, 40, 226);
+  /* color: rgb(40, 40, 226); */
+  color: #fff;
   font-size: 20rpx;
 }
