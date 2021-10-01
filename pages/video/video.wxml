@@ -19,7 +19,7 @@
     refresher-triggered="{{isRefresher}}"
     bindscrolltolower="handleScrollToLower"
   >
-    <view class="video-item" wx:for="{{currentVideoList}}" wx:key="data.vid">
+    <view class="video-item" wx:for="{{currentVideoList}}" wx:key="index">
       <video 
         src="{{item.data.urlInfo}}" 
         poster="{{item.data.coverUrl}}" 

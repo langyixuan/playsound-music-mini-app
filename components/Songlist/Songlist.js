@@ -38,9 +38,6 @@ Component({
    * 在组件实例进入页面节点树时执行
    */
   lifetimes: {
-    created() {
-      console.log('created: 组件刚刚被创建时执行')
-    },
     attached() {
       // 订阅来自songDetail页面发送来的歌曲播放模式
       PubSub.subscribe('switchType', (msg, typeObj) => {

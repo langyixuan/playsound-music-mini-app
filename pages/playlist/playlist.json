@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "Navigation": "/components/Navigation/Navigation",
+    "NavScroll": "/components/NavScroll/NavScroll",
+    "PlaylistItem": "/components/PlaylistItem/PlaylistItem"
+  }
+}

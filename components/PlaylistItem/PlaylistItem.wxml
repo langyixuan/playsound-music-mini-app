@@ -1,0 +1,8 @@
+<!-- 歌单组件 -->
+<view class="playlist-item" bindtap="toPlaylistDetail" id="{{playlistItem.id}}">
+  <image class="bg-blur" src="{{playlistItem.coverImgUrl}}"></image>
+  <image class="cover" src="{{playlistItem.coverImgUrl}}"></image>
+  <text class="title">{{playlistItem.name}}</text>
+  <text class="creator">By: {{playlistItem.creator.nickname}}</text>
+  <text class="count">收录{{playlistItem.trackCount}}首</text>
+</view>

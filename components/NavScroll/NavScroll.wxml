@@ -1,0 +1,7 @@
+<!-- 滚动导航组件 -->
+<scroll-view class="nav-scroll" scroll-x enable-flex>
+  <view class="nav-list">
+    <icon class="iconfont icon-search" bindtap="toSearch"></icon>
+    <text class="nav-item {{currentTag == item.id ? 'active' : ''}}" wx:for="{{tags}}" wx:key="id" bindtap="changeNav" id="{{item.id}}">{{item.name}}</text>
+  </view>
+</scroll-view>

@@ -7,11 +7,11 @@
   <!-- 搜索栏区域 -->
   <view class="search-bar">
     <icon class="iconfont icon-sousuo2"></icon>
-    <input type="text" placeholder="输入歌曲名/歌手/专辑" placeholder-class="place-holder" bindinput="handleInputChange"></input>
-    <icon class="iconfont icon-quxiao1"></icon>
+    <input type="text" placeholder="输入歌曲名/歌手/专辑" placeholder-class="place-holder" bindinput="handleInputChange" value="{{keywords}}"></input>
+    <icon class="iconfont icon-quxiao1" bindtap="clearInput"></icon>
   </view>
 
-  <block wx:if="{{searchList.length}}">
+  <block wx:if="{{keywords}}">
     <!-- 历史搜索区域 -->
     <view class="history">
       <icon class="iconfont icon-lishixiao"></icon>

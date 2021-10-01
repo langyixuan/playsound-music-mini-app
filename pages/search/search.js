@@ -21,20 +21,19 @@ Page({
 
   // 监听搜索框输入内容的变化
   handleInputChange: debounce(function (event) {
-    if (event.detail.value) {
-      this.setData({ keywords: event.detail.value })
-      this.getSearchList()
-    } else {
-      this.setData({ searchList: [] })
-    }
+    this.setData({ keywords: event.detail.value.trim() })
+    this.getSearchList()
+    console.log(event)
+    console.log(event.detail.value.trim())
   }, 1000),
 
   // 获取输入关键字模糊匹配搜索结果
   async getSearchList(){
     let res = await request('/search', {keywords: this.data.keywords, limit: 10})
-    this.setData({ searchList: res.result.songs })
+    if (res.code === 200) {
+      this.setData({ searchList: res.result.songs })
+    }
   },
-
 
   // 进入搜索详情页面
   toSearchDetail(event) {
@@ -46,6 +45,11 @@ Page({
     let historyList = wx.getStorageSync('searchHistory')
     wx.setStorageSync('searchHistory', unique([...historyList, ...tempList]))
     this.setData({ history: wx.getStorageSync('searchHistory')})
+  },
+
+  // 清空输入框
+  clearInput() {
+    this.setData({ keywords: '' })
   },
 
 

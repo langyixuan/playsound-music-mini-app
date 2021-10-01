@@ -1,0 +1,16 @@
+<!-- 歌单页面 -->
+<view class="playlist-container">
+  <!-- 自定义导航栏区域 -->
+  <Navigation class="navigation">
+    <icon class="iconfont icon-zuojiantou-" bindtap="back"></icon>
+  </Navigation>
+  
+  <!-- 头部歌单导航区域 -->
+  <NavScroll tags="{{hotTag}}" currentTag="{{currentTag}}" bind:getCurrentTag="getCurrentTag"/>
+
+  <!-- 歌单列表区域 -->
+  <scroll-view class="playlist-scroll" scroll-y enable-flex bindscrolltolower="handleScrollToLower">
+    <PlaylistItem  wx:for="{{currentPlaylist}}" wx:key="id" playlistItem="{{item}}"/>
+  </scroll-view>
+
+</view>

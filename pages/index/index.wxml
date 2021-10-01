@@ -64,7 +64,7 @@
 
   <!-- 精选歌单区域 -->
   <view class="re-playlist">
-    <NavHeader title="精选歌单"></NavHeader>
+    <NavHeader title="精选歌单" router="/pages/playlist/playlist"></NavHeader>
     <scroll-view class="scroll-playlist" scroll-x enable-flex>
       <view class="playlist-item" wx:for="{{rePlaylist1}}" wx:key="id">
         <image src="{{item.coverImgUrl}}" bindtap="toPlaylistDetail" id="{{item.id}}"></image>
