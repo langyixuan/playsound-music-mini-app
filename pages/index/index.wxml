@@ -18,7 +18,7 @@
     <swiper class="songs-swiper" circular next-margin="40rpx">
       <swiper-item wx:for="{{newSongs}}" wx:key="index" wx:for-item="song">
         <view class="song-item" wx:for="{{song.newSong}}" wx:key="id">
-          <image src="{{item.album.picUrl}}"></image>
+          <image src="{{item.album.picUrl}}" bindtap="toSongDetail" id="{{item.id}}"></image>
           <view class="desc">
             <text class="name">{{item.name}}</text>
             <text class="singer">{{item.artists[0].name}}</text>
@@ -53,13 +53,24 @@
       <swiper-item wx:for="{{reAlbumDetail}}" wx:key="index">
         <view class="re-album-item">
            <image src="https://coloredvinylrecords.com/pictures/a/avenged-sevenfold-nightmare.png" class="record"></image>
-           <image src="{{item.album.coverUrl}}" class="cover"></image>
-           <text class="name">{{item.album.albumName}}</text>
-           <text class="artist">{{item.album.artistName}}</text>
-           <text class="desc">{{item.product.descr[0].resource}}</text>
+           <image src="{{item.album.picUrl}}" class="cover"></image>
+           <text class="name">{{item.album.name}}</text>
+           <text class="artist">{{item.album.artists[0].name}}</text>
+           <text class="desc">{{item.album.description}}</text>
         </view>
       </swiper-item>
     </swiper>
+  </view>
+
+  <!-- 热门歌手区域 -->
+  <view class="hot-singer">
+    <NavHeader title="热门歌手"></NavHeader>
+    <scroll-view class="singer-scroll" scroll-x enable-flex>
+      <view class="singer-item" wx:for="{{hotSinger}}" wx:key="id">
+        <image class="avatar" src="{{item.picUrl}}" bindtap="toSingerDetail" id="{{item.id}}"></image> 
+        <text class="name">{{item.name}}</text>
+      </view>
+    </scroll-view>
   </view>
 
   <!-- 精选歌单区域 -->

@@ -1,0 +1,40 @@
+<!-- 歌手详情页面 -->
+<view class="singer-detail">
+  <!-- 自定义导航区域 -->
+  <Navigation class="navigation" navPosition="fixed">
+    <icon class="iconfont icon-zuojiantou-" bindtap="back"></icon>
+  </Navigation>
+
+  <!-- 顶部歌手信息 -->
+  <view class="top-desc">
+    <view class="top-bg">
+      <image class="cover4" src="{{singerDetail.artist.cover}}"></image>
+      <image class="cover3" src="{{singerDetail.artist.cover}}"></image>
+      <image class="cover2" src="{{singerDetail.artist.cover}}"></image>
+      <image class="cover1" src="{{singerDetail.artist.cover}}"></image>
+      <image class="cover" src="{{singerDetail.artist.cover}}"></image>
+      <text class="name">{{singerDetail.artist.name}}</text>
+    </view>
+  </view>
+
+  <!-- 歌手详细信息 -->
+  <view class="singer">
+    <view class="nav">
+      <text bindtap="changeNav" id="{{0}}" class="{{currentNav == 0 ? 'active' : ''}}">作品</text>
+      <text bindtap="changeNav" id="{{1}}" class="{{currentNav == 1 ? 'active' : ''}}">简介</text>
+    </view>
+    <swiper class="detail-swiper" bindchange="handelSwiper" current="{{currentNav}}">
+      <swiper-item class="portfolio">
+        <scroll-view class="singer-songs" scroll-y>
+          <Songlist songsDetail="{{songsDetail}}"/>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item class="personal">
+        <view class="singer-desc">
+          {{singerDetail.artist.briefDesc}}
+        </view>
+      </swiper-item>
+
+    </swiper>
+  </view>
+</view>

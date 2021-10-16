@@ -10,6 +10,7 @@ Page({
     reAlbum: [],   // 专辑推荐
     reAlbumDetail: [],  // 推荐专辑详情
     newSongs: [],   // 新歌速递数据
+    hotSinger: [],  // 热门歌手
   },
 
   // 进入今日推荐详情页面
@@ -32,13 +33,30 @@ Page({
     })
   },
 
+  // 进入歌曲详情页面
+  async toSongDetail(event) {
+    let id = event.currentTarget.id
+    let res = await request('/song/detail', { ids: id })
+    let songInfo = encodeURIComponent(JSON.stringify(res.songs[0]))
+    wx.navigateTo({
+      url: `/pages/songDetail/songDetail?songInfo=${songInfo}`,
+    })
+  },
+
+  // 进入歌手详情页面
+  toSingerDetail(event) {
+    wx.navigateTo({
+      url: `/pages/singerDetail/singerDetail?id=${event.currentTarget.id}`,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: async function (options) {
     // 新碟上架
     let newAlbumData = await request('/top/album', {
-      limit: 10,
+      limit: 20,
       area: 'EA',
     })
     // 精选歌单
@@ -47,7 +65,8 @@ Page({
       cat: '欧美'
     })
     // 推荐专辑
-    let reAlbumData = await request('/album/list', {
+    let reAlbumData = await request('/album/new', {
+      area: 'EA',
       limit: 5,
     })
     // 新歌速递
@@ -65,39 +84,36 @@ Page({
      */
     let reAlbumIdsArr = []
     let reAlbumDetailData = []
-    reAlbumData.products.forEach(item => {
-      reAlbumIdsArr.push(item.albumId)
+    reAlbumData.albums.forEach(item => {
+      reAlbumIdsArr.push(item.id)
     })
     for(let i = 0; i < 5; i++) {
-      let reAlbumDetailItem = await request('/album/detail', { id: reAlbumIdsArr[i]})
+      let reAlbumDetailItem = await request('/album', { id: reAlbumIdsArr[i]})
       reAlbumDetailData.push(reAlbumDetailItem)
+    }
+
+    // 获取热门歌手
+    let hotSingerData = await request('/toplist/artist', { type: 2 })
+    let hotSingerArr = []
+    for (let i = 0; i < 10; i++) {
+      let randomIndex = Math.floor(Math.random() * hotSingerData.list.artists.length)
+      if (!hotSingerArr.includes(hotSingerData.list.artists[randomIndex])) {
+        hotSingerArr.push(hotSingerData.list.artists[randomIndex])
+      }
     }
 
     // 改变初始化数据
     this.setData({
-      newAlbum: newAlbumData.monthData.slice(0, 7),
+      newAlbum: newAlbumData.monthData.slice(10, 17),
       rePlaylist1: rePlaylistData.playlists.slice(0, 5),
       rePlaylist2: rePlaylistData.playlists.slice(5, 10),
       reAlbum: reAlbumData.products,
       reAlbumDetail: reAlbumDetailData,
-      newSongs: newSongsArr
+      newSongs: newSongsArr,
+      hotSinger: hotSingerArr
     })
-
-    /**测试数据 */
-    // console.log(newAlbumData)
-    // console.log(rePlaylistData)
-    // console.log(reAlbumData)
-    
-    // console.log()
-    // setTimeout(() => {
-    //   console.log(this.data.reAlbumDetail)
-    // }, 600)
-    // console.log(this.data.reAlbumDetail)
   },
 
-  toDetail(){
-   
-  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -30,9 +30,11 @@ Page({
 
   },
 
-  // 跳转到用户私人歌单详情页
-  toUserPlaylistDetail() {
-    
+  // 跳转到歌单详情页
+  toPlaylistDetail(event) {
+    wx.navigateTo({
+      url: `/pages/playlistDetail/playlistDetail?id=${event.currentTarget.id}`
+    })
   },
 
   // 获取最近播放的音乐

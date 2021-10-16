@@ -58,8 +58,8 @@
     <view class="user-playlist">
       <NavHeader title="我的歌单"></NavHeader>
       <scroll-view class="scroll-playlist" scroll-x enable-flex>
-        <view class="playlist-item" wx:for="{{userPlaylist}}" wx:key="id">
-          <image src="{{item.coverImgUrl}}" bindtap="toUserPlaylistDetail"></image>
+        <view class="playlist-item" wx:for="{{userPlaylist}}" wx:key="id" bindtap="toPlaylistDetail" id="{{item.id}}">
+          <image src="{{item.coverImgUrl}}"></image>
           <text>{{item.name}}</text>
         </view>
       </scroll-view>
