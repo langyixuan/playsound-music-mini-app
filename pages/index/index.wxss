@@ -18,7 +18,7 @@
   height: 500rpx;
   display: flex;
   margin-bottom: 32rpx;
-  /* margin-top: 200rpx; */
+  margin-top: 40rpx;
 }
 
 .new-album .album-item{

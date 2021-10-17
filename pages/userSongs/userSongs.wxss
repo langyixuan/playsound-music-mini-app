@@ -1,0 +1,16 @@
+/* 自定义导航区域 */
+
+.navigation text, icon {
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.navigation .iconfont {
+  font-size: 50rpx;
+  margin-right: 40rpx;
+}
+
+.songlist {
+  margin-top: 40rpx;
+}

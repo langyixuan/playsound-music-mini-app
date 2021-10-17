@@ -18,23 +18,32 @@ Page({
     })
   },
 
-  // 跳转到历史播放详情页
-  toHistoryDetail(){
-    wx.navigateTo({
-      url: '/pages/history/history',
-    })
-  },
-
-  // 跳转到喜欢的音乐详情页
-  toLikeMusicDetail(){
-
+  // 跳转用户歌曲
+  toUserSongs(event){
+    if (this.data.userInfo) {
+      wx.navigateTo({
+        url: `/pages/userSongs/userSongs?type=${event.currentTarget.id}&uid=${this.data.userInfo.userId}`,
+      })
+    } else {
+      wx.showToast({
+        title: '请先登录~',
+        icon: 'none'
+      })
+    }
   },
 
   // 跳转到歌单详情页
   toPlaylistDetail(event) {
-    wx.navigateTo({
-      url: `/pages/playlistDetail/playlistDetail?id=${event.currentTarget.id}`
-    })
+    if (this.data.userInfo) {
+      wx.navigateTo({
+        url: `/pages/playlistDetail/playlistDetail?id=${event.currentTarget.id}`
+      })
+    } else {
+      wx.showToast({
+        title: '请先登录~',
+        icon: 'none'
+      })
+    }
   },
 
   // 获取最近播放的音乐
@@ -46,7 +55,7 @@ Page({
     this.setData({
       recentPlaylist: res.weekData
     })
-    wx.setStorageSync('recentPlaylist', JSON.stringify(res))
+    // wx.setStorageSync('recentPlaylist', JSON.stringify(res))
   },
 
   // 获取喜欢的音乐ids
@@ -60,8 +69,8 @@ Page({
     this.setData({
       likeMusic: muiscDetailRes.songs.slice(0, 1)
     })
-    // 将请求到喜欢的音乐详情存储在本地，方便后期做详情页使用
-    wx.setStorageSync('likeMusicDetail', JSON.stringify(muiscDetailRes.songs))
+    // // 将请求到喜欢的音乐详情存储在本地，方便后期做详情页使用
+    // wx.setStorageSync('likeMusicDetail', JSON.stringify(muiscDetailRes.songs))
   },
 
   // 获取用户歌单
@@ -70,8 +79,8 @@ Page({
     this.setData({
       userPlaylist: res.playlist.slice(1, 9)
     })
-    // 将请求到的用户私人歌单数据存储在本地，方便后期做详情页使用
-    wx.setStorageSync('userPlaylist', JSON.stringify(res.playlist))
+    // // 将请求到的用户私人歌单数据存储在本地，方便后期做详情页使用
+    // wx.setStorageSync('userPlaylist', JSON.stringify(res.playlist))
   },
 
   /**

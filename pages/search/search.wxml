@@ -16,21 +16,21 @@
     <view class="history">
       <icon class="iconfont icon-lishixiao"></icon>
       <scroll-view class="history-scroll" scroll-x enable-flex>
-        <text class="history-item" wx:for="{{history}}" wx:key="index">{{item}}</text>
+        <text class="history-item" wx:for="{{history}}" wx:key="index" bindtap="toSearchDetail" id="{{item}}">{{item}}</text>
       </scroll-view>
       <icon class="iconfont icon-lajitong"></icon>
     </view>
   
-    <!-- 模糊匹配结果 -->
+    <!-- 搜索建议区域 -->
     <view class="search-result">
-      <text class="search-item" wx:for="{{searchList}}" wx:key="id" bindtap="toSearchDetail" id="{{item.name}}">{{item.name}}</text>
+      <text class="search-item" wx:for="{{searchList}}" wx:key="id" bindtap="toSearchDetail" id="{{item.keyword}}">{{item.keyword}}</text>
     </view>
   </block>
 
   <block wx:else>
     <!-- 热门搜索区域 -->
     <view class="hot-search">
-      <view class="hot-item" wx:for="{{hotSearchList}}" wx:key="index">
+      <view class="hot-item" wx:for="{{hotSearchList}}" wx:key="index" bindtap="toSearchDetail" id="{{item.searchWord}}">
         <image src="/static/images/icons/hot.png" wx:if="{{item.iconUrl}}"></image>
         <text>{{item.searchWord}}</text>
       </view>

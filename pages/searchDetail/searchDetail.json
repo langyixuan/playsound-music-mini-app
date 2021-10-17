@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "NavHeader": "/components/NavHeader/NavHeader",
+    "Navigation": "/components/Navigation/Navigation",
+    "Songlist": "/components/Songlist/Songlist",
+    "SingerItem": "/components/SingerItem/SingerItem",
+    "PlaylistItem": "/components/PlaylistItem/PlaylistItem"
+  }
+}

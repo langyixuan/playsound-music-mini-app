@@ -12,7 +12,10 @@
     "components/Navigation/Navigation",
     "pages/playlistDetail/playlistDetail",
     "pages/recommendMusicType/recommendMusicType",
-    "pages/singerDetail/singerDetail"
+    "pages/singerDetail/singerDetail",
+    "pages/searchDetail/searchDetail",
+    "pages/albumDetail/albumDetail",
+    "pages/userSongs/userSongs"
   ],
   "requiredBackgroundModes": [
     "audio"

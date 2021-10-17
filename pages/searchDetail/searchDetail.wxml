@@ -1,0 +1,28 @@
+<!-- 搜索详情页面 -->
+<view class="search-detail">
+  <Navigation class="navigation" bgcolor="linear-gradient(0deg, rgba(34,193,195,0) 0%, rgba(0,69,252,0.6337885495995272) 100%)">
+    <icon class="iconfont icon-zuojiantou-" bindtap="back"></icon>
+    <text class="search-text">搜索结果</text>
+  </Navigation>
+  <!-- 搜索歌曲 -->
+  <view class="songs">
+    <view class="header">
+      <NavHeader title="歌曲" showmore="true"></NavHeader>
+    </view>
+    <Songlist songsDetail="{{songs}}" />
+  </view>
+
+  <!-- 搜索歌手 -->
+  <view class="singers">
+    <NavHeader title="歌手" showmore="true"></NavHeader>
+    <SingerItem wx:for="{{singers}}" wx:key="id" singerItem="{{item}}" />
+  </view>
+
+  <!-- 搜索歌单 -->
+  <view class="playlists">
+     <NavHeader title="歌单" showmore="true"></NavHeader>
+     <view class="playlist-item"> 
+       <PlaylistItem wx:for="{{playlists}}" wx:key="id" playlistItem="{{item}}" />
+     </view>
+  </view>
+</view>

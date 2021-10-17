@@ -1,0 +1,11 @@
+<!-- 歌手项 -->
+<view class="singer-item">
+  <image class="cover" bindtap="toSingerDetail" id="{{singerItem.id}}" src="{{singerItem.picUrl}}"></image>
+  <view class="desc">
+    <text class="name">{{singerItem.name}}</text>
+    <view class="count">
+      <text>专辑: {{singerItem.albumSize}}</text>
+      <text>视频: {{singerItem.mvSize}}</text>
+    </view>
+  </view>
+</view>

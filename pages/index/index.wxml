@@ -5,7 +5,7 @@
   <!-- 新碟上架区域 -->
   <scroll-view class="new-album" scroll-x enable-flex>
     <view class="album-item" wx:for="{{newAlbum}}" wx:key="id">
-      <image src="{{item.blurPicUrl}}"></image>
+      <image src="{{item.blurPicUrl}}" bindtap="toAlbumDetail" id="{{item.id}}"></image>
       <view class="desc">
         <text>{{item.name}}</text>
       </view>
@@ -36,7 +36,7 @@
       <view class="item">
       <text class="name">每日推荐歌曲</text>
       <text class="en">SONG</text>
-      <image  class="cover" src="https://coloredvinylrecords.com/pictures/m/miami-nights-1984-turbulence.png"></image>
+      <image  class="cover" src="https://coloredvinylrecords.com/pictures/a/avenged-sevenfold-nightmare.png"></image>
     </view>
     <view class="item" bindtap="toDailyDetail" id="playlist">
       <text class="name">每日推荐歌单</text>
@@ -52,8 +52,8 @@
     <swiper circular next-margin="40rpx" class="re-album-swiper">
       <swiper-item wx:for="{{reAlbumDetail}}" wx:key="index">
         <view class="re-album-item">
-           <image src="https://coloredvinylrecords.com/pictures/a/avenged-sevenfold-nightmare.png" class="record"></image>
-           <image src="{{item.album.picUrl}}" class="cover"></image>
+           <image src="http://pngimg.com/uploads/vinyl/vinyl_PNG64.png" class="record"></image>
+           <image src="{{item.album.picUrl}}" class="cover" bindtap="toAlbumDetail" id="{{item.album.id}}"></image>
            <text class="name">{{item.album.name}}</text>
            <text class="artist">{{item.album.artists[0].name}}</text>
            <text class="desc">{{item.album.description}}</text>

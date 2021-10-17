@@ -1,0 +1,80 @@
+/* 自定义导航区域 */
+.navigation text, icon {
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.navigation .iconfont {
+  font-size: 50rpx;
+  margin-right: 40rpx;
+}
+
+/* 专辑介绍区域 */
+.album-desc {
+  width: 100%;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.album-desc .cover {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300rpx;
+  height: 300rpx;
+  margin-right: 40rpx;
+}
+
+.album-desc .cover .img {
+  position: absolute;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+}
+
+.album-desc .cover .bg {
+  position: absolute;
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 50%;
+}
+
+.album-desc .desc {
+  width: 50%;
+  display: flex;
+  height: 250rpx;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.desc .name {
+  color: #fff;
+  font-size: 26rpx;
+}
+
+.desc .singer {
+  color: #fff;
+  font-size: 24rpx;
+}
+
+.desc .publish-time {
+  color: #ccc;
+  font-size: 20rpx;
+}
+
+.desc .info {
+  color: #ccc;
+  font-size: 20rpx;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

@@ -1,0 +1,36 @@
+.singer-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.cover {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 40rpx; 
+}
+
+.desc {
+  height: 80rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.desc .name {
+  color: #fff;
+  font-size: 26rpx;
+  font-weight: 700;
+}
+
+.desc .count {
+  color: #ccc;
+  font-size: 20rpx;
+  font-weight: 700;
+}
+
+.desc .count text {
+  margin-right: 36rpx;
+}

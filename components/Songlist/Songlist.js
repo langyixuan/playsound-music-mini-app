@@ -9,6 +9,11 @@ Component({
     songsDetail: {
       type: Array,
       value: []
+    },
+    // 是否显示图片
+    showImg: {
+      type: Boolean,
+      value: true
     }
   },
 

@@ -1,0 +1,10 @@
+<!-- 用户歌曲 -->
+<view class="user-songs">
+  <Navigation class="navigation" bgcolor="#1A1A1A;">
+    <icon class="iconfont icon-zuojiantou-" bindtap="back"></icon>
+    <text class="search-text">{{type}}</text>
+  </Navigation>
+  <view class="songlist">
+    <Songlist songsDetail="{{songs}}"/>
+  </view>
+</view>

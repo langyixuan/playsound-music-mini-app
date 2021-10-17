@@ -27,7 +27,7 @@
       <view class="flex-left">
         <!-- 喜欢的音乐 -->
         <view class="like">
-          <image src='{{likeMusic.length ? likeMusic[0].al.picUrl : "/static/images/no-data.jpg"}}' bindTap="toLikeMusicDetail"></image>
+          <image src='{{likeMusic.length ? likeMusic[0].al.picUrl : "/static/images/no-data.jpg"}}' bindTap="toLikeMusicDetail" bindtap="toUserSongs" id="喜欢的音乐"></image>
           <view class="like-text">
             <text class="iconfont icon-xihuanlike"></text>
             <text>喜欢</text>
@@ -37,7 +37,7 @@
       <view class="flex-right">
         <!-- 历史播放 -->
         <view class="history">
-          <image src='{{recentPlaylist.length ? recentPlaylist[0].song.al.picUrl : "/static/images/no-data.jpg"}}' bindtap="toHistoryDetail"></image>
+          <image src='{{recentPlaylist.length ? recentPlaylist[0].song.al.picUrl : "/static/images/no-data.jpg"}}' bindtap="toUserSongs" id="历史播放"></image>
           <view class="history-text">
             <text class="iconfont icon-lishi"></text>
             <text>历史播放</text>

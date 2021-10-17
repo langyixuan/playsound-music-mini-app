@@ -1,0 +1,25 @@
+<!-- 专辑详情页面 -->
+<wxs module="filters" src="../../utils/filters.wxs"></wxs>
+<view class="album-detail">
+  <!-- 自定义导航栏区域 -->
+  <Navigation class="navigation">
+    <icon class="iconfont icon-zuojiantou-" bindtap="back"></icon>
+  </Navigation>
+
+  <!-- 专辑介绍区域 -->
+  <view class="album-desc">
+    <view class="cover">
+      <image class="bg" src="http://pngimg.com/uploads/vinyl/vinyl_PNG64.png"></image>
+      <image class="img" src="{{albumDetail.blurPicUrl}}"></image> 
+    </view>
+    <view class="desc">
+      <text class="name">{{albumDetail.name}}</text>
+      <text class="singer">{{albumDetail.artist.name}}</text>
+      <text class="publish-time">{{filters.formatTime(albumDetail.publishTime)}}</text>
+      <text class="info">{{albumDetail.description}}</text>
+    </view>
+  </view>
+
+  <!-- 专辑收录歌曲区域 -->
+  <Songlist songsDetail="{{songs}}" showImg="{{false}}"/>
+</view>

@@ -50,6 +50,13 @@ Page({
     })
   },
 
+  // 进入专辑详情页面
+  toAlbumDetail(event) {
+    wx.navigateTo({
+      url: `/pages/albumDetail/albumDetail?id=${event.currentTarget.id}`,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

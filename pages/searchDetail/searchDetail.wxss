@@ -1,0 +1,32 @@
+/* 自定义导航区域 */
+.navigation text, icon {
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.navigation .iconfont {
+  font-size: 50rpx;
+  margin-right: 40rpx;
+}
+
+.songs .header {
+  padding: 0 40rpx;
+}
+
+.singers {
+  padding: 0 40rpx;
+}
+
+.playlists {
+  width: 100%;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+
+.playlist-item {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+

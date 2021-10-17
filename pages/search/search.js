@@ -8,7 +8,7 @@ Page({
     typeObj: [],   // 推荐歌曲类别
     hotSearchList: [],   // 热搜列表
     keywords: '',   // 输入搜索关键字
-    searchList: [],   // 模糊匹配搜索结果数据
+    searchList: [],   // 搜索建议
     history: [],   // 搜索历史
   },
 
@@ -16,7 +16,6 @@ Page({
   async getHotSearch() {
     let res = await request('/search/hot/detail')
     this.setData({ hotSearchList: res.data.slice(5, 15)})
-    console.log(res)
   },
 
   // 监听搜索框输入内容的变化
@@ -25,11 +24,11 @@ Page({
     this.getSearchList()
   }, 1000),
 
-  // 获取输入关键字模糊匹配搜索结果
+  // 获取输入关键字搜索建议
   async getSearchList(){
-    let res = await request('/search', {keywords: this.data.keywords, limit: 10})
+    let res = await request('/search/suggest', { type: 'mobile', keywords: this.data.keywords})
     if (res.code === 200) {
-      this.setData({ searchList: res.result.songs })
+      this.setData({ searchList: res.result.allMatch})
     }
   },
 
@@ -43,6 +42,11 @@ Page({
     let historyList = wx.getStorageSync('searchHistory')
     wx.setStorageSync('searchHistory', unique([...historyList, ...tempList]))
     this.setData({ history: wx.getStorageSync('searchHistory')})
+
+    wx.navigateTo({
+      url: `/pages/searchDetail/searchDetail?keyword=${event.currentTarget.id}`,
+    })
+    this.setData({keywords: ''})
   },
 
   // 清空输入框

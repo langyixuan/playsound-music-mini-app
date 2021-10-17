@@ -23,6 +23,12 @@
   margin-right: 40rpx;
 }
 
+.song-item .index {
+  color: rgb(185, 184, 184);
+  margin-right: 40rpx;
+  font-size: 24rpx;
+}
+
 .song-item .desc {
   width: 460rpx;
   display: flex;
