@@ -45,16 +45,34 @@ PlaySound_music                 // PlaySound
 
 ## 项目截图
 
-<img src="https://i.loli.net/2021/10/22/hw2tyFRemKfidW4.jpg" alt="12" style="zoom:33%;" /><img src="https://i.loli.net/2021/10/22/cWsvQgIyZo8qUz4.jpg" alt="12" style="zoom:33%;" />
+<center class="half">
+    <img src="https://i.loli.net/2021/10/22/hw2tyFRemKfidW4.jpg" width="250"/>
+    <img src="https://i.loli.net/2021/10/22/cWsvQgIyZo8qUz4.jpg" width="250"/>
+    <img src="https://i.loli.net/2021/10/22/oKJT8isuMeDLmPF.jpg" width="250"/>
+</center>
 
-<img src="https://i.loli.net/2021/10/22/oKJT8isuMeDLmPF.jpg" alt="12" style="zoom:33%;" /><img src="https://i.loli.net/2021/10/22/d3PAREXypIhgaoN.jpg" alt="12" style="zoom:33%;" />
+<center class="half">
+    <img src="https://i.loli.net/2021/10/22/d3PAREXypIhgaoN.jpg" width="250"/>
+    <img src="https://i.loli.net/2021/10/22/DXoxnFpUbkYh4yc.jpg" width="250"/>
+    <img src="https://i.loli.net/2021/10/22/oEHAf7iaDctk3W1.jpg" width="250"/>
+</center>
 
-<img src="https://i.loli.net/2021/10/22/DXoxnFpUbkYh4yc.jpg" alt="12" style="zoom:33%;" /><img src="https://i.loli.net/2021/10/22/oEHAf7iaDctk3W1.jpg" alt="12" style="zoom:33%;" />
+<center class="half">
+    <img src="https://i.loli.net/2021/10/22/x6NXh3O9YdoZucr.jpg" width="250"/>
+    <img src="https://i.loli.net/2021/10/22/oe9iak6VcRzILYf.jpg" width="250"/>
+    <img src="https://i.loli.net/2021/10/22/J8E3wIVKXouZQqv.jpg" width="250"/>
+</center>
 
-<img src="https://i.loli.net/2021/10/22/x6NXh3O9YdoZucr.jpg" alt="12" style="zoom:33%;" /><img src="https://i.loli.net/2021/10/22/oe9iak6VcRzILYf.jpg" alt="12" style="zoom:33%;" />
+<center class="half">
+    <img src="https://i.loli.net/2021/10/22/ZVA972QPuoMkHOD.jpg" width="250"/>
+    <img src="https://i.loli.net/2021/10/22/r3WYnIcgKtlZjMa.jpg" width="250"/>
+    <img src="https://i.loli.net/2021/10/22/xRVa5tykWfc3Knr.jpg" width="250"/>
+</center>
 
-<img src="https://i.loli.net/2021/10/22/J8E3wIVKXouZQqv.jpg" alt="12" style="zoom:33%;" /><img src="https://i.loli.net/2021/10/22/ZVA972QPuoMkHOD.jpg" alt="12" style="zoom:33%;" />
+<center class="half">
+    <img src="https://i.loli.net/2021/10/22/aiZ9ngmeAKqDXUr.jpg" width="250"/>
+    <img src="https://i.loli.net/2021/10/22/gwebBrMCiLWkquR.jpg" width="250"/>
+    <img src="https://i.loli.net/2021/10/22/5PtOYaF3fML4RHA.jpg" width="250"/>
+</center>
 
-<img src="https://i.loli.net/2021/10/22/r3WYnIcgKtlZjMa.jpg" alt="12" style="zoom:33%;" /><img src="https://i.loli.net/2021/10/22/xRVa5tykWfc3Knr.jpg" alt="12" style="zoom:33%;" />
 
-<img src="https://i.loli.net/2021/10/22/aiZ9ngmeAKqDXUr.jpg" alt="12" style="zoom:33%;" /><img src="https://i.loli.net/2021/10/22/gwebBrMCiLWkquR.jpg" alt="12" style="zoom:33%;" />
