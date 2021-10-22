@@ -4,7 +4,7 @@
   <Navigation class="navigation" navPosition="fixed">
     <icon class="iconfont icon-zuojiantou-" bindtap="back"></icon>
   </Navigation>
-  <image src="https://cdn.dribbble.com/users/478988/screenshots/5957389/webp.net-gifmaker.gif" class="top-bg"></image>
+  <image src="/static/images/topgif.gif" class="top-bg"></image>
    <view class="date">
     <text class="day">{{today[0]}}</text>
     <text class="month">/{{today[1]}}</text>

@@ -7,8 +7,8 @@ var header = {
 export default (url, data = {}, method = 'GET') => {
   return new Promise((resolve, reject) => {
     wx.request({
-      // url: config.mobileHost + url,
-      url: config.host + url,
+      url: config.mobileHost + url,
+      // url: config.host + url,
       data,
       method,
       header,
